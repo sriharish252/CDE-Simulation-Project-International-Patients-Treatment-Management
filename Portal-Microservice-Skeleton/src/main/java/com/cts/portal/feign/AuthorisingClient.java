@@ -20,4 +20,9 @@ public interface AuthorisingClient {
 	public boolean authorizeTheRequest(
 			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader);
 	
+	//--------------------------------------
+	@PostMapping("/authorize-role")
+	public boolean authorizeTheRequestIfAdmin(@RequestHeader(value = "Authorization", required = true) String requestTokenHeader);
+	
+	
 }
