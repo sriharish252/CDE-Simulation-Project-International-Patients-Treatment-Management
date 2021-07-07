@@ -1,0 +1,204 @@
+2021-07-07_09-57-08 [http-nio-8500-exec-10] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-07_09-57-08 [http-nio-8500-exec-10] ERROR c.c.p.e.GlobalExceptionHandler - [500] during [DELETE] to [http://localhost:8100/ipTreatmentOffering/deleteSpecialist/1] [IPTreatmentOfferingClient#deleteSpecialist(String,int)]: [{"timestamp":"2021-07-07T04:30:12.986+00:00","status":500,"error":"Internal Server Error","trace":"org.springframework.dao.EmptyResultDataAccessException: No class com.cts.mfpe.model.SpecialistDetail ... (9222 bytes)]
+2021-07-07_09-57-08 [http-nio-8500-exec-9] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-07_09-57-08 [http-nio-8500-exec-9] ERROR c.c.p.e.GlobalExceptionHandler - [500] during [DELETE] to [http://localhost:8100/ipTreatmentOffering/deleteSpecialist/1] [IPTreatmentOfferingClient#deleteSpecialist(String,int)]: [{"timestamp":"2021-07-07T04:30:26.496+00:00","status":500,"error":"Internal Server Error","trace":"org.springframework.dao.EmptyResultDataAccessException: No class com.cts.mfpe.model.SpecialistDetail ... (9222 bytes)]
+2021-07-07_09-57-08 [http-nio-8500-exec-6] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-07_09-57-08 [http-nio-8500-exec-6] ERROR c.c.p.e.GlobalExceptionHandler - [500] during [DELETE] to [http://localhost:8100/ipTreatmentOffering/deleteSpecialist/2] [IPTreatmentOfferingClient#deleteSpecialist(String,int)]: [{"timestamp":"2021-07-07T04:33:43.101+00:00","status":500,"error":"Internal Server Error","trace":"org.springframework.dao.EmptyResultDataAccessException: No class com.cts.mfpe.model.SpecialistDetail ... (9222 bytes)]
+2021-07-07_09-57-08 [http-nio-8500-exec-2] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-07_09-57-08 [http-nio-8500-exec-2] ERROR c.c.p.e.GlobalExceptionHandler - [500] during [DELETE] to [http://localhost:8100/ipTreatmentOffering/deleteSpecialist/1] [IPTreatmentOfferingClient#deleteSpecialist(String,int)]: [{"timestamp":"2021-07-07T04:33:50.113+00:00","status":500,"error":"Internal Server Error","trace":"org.springframework.dao.EmptyResultDataAccessException: No class com.cts.mfpe.model.SpecialistDetail ... (9222 bytes)]
+2021-07-07_09-57-08 [http-nio-8500-exec-3] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-07_09-57-08 [http-nio-8500-exec-3] ERROR c.c.p.e.GlobalExceptionHandler - [500] during [DELETE] to [http://localhost:8100/ipTreatmentOffering/deleteSpecialist/3] [IPTreatmentOfferingClient#deleteSpecialist(String,int)]: [{"timestamp":"2021-07-07T04:33:53.127+00:00","status":500,"error":"Internal Server Error","trace":"org.springframework.dao.EmptyResultDataAccessException: No class com.cts.mfpe.model.SpecialistDetail ... (9222 bytes)]
+2021-07-07_10-06-41 [http-nio-8500-exec-10] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-07_10-06-41 [http-nio-8500-exec-10] ERROR c.c.p.e.GlobalExceptionHandler - [500] during [DELETE] to [http://localhost:8100/ipTreatmentOffering/deleteSpecialist/2] [IPTreatmentOfferingClient#deleteSpecialist(String,int)]: [{"timestamp":"2021-07-07T05:03:08.571+00:00","status":500,"error":"Internal Server Error","trace":"org.springframework.dao.EmptyResultDataAccessException: No class com.cts.mfpe.model.SpecialistDetail ... (9222 bytes)]
+2021-07-07_11-59-14 [http-nio-8500-exec-7] ERROR o.a.c.c.C.[.[localhost].[/].[jsp] - Servlet.service() for servlet [jsp] threw exception
+org.apache.jasper.JasperException: /WEB-INF/views/delete-specialist-by-id.jsp (line: [45], column: [16]) Unterminated [&lt;c:out] tag
+	at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:42)
+	at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:292)
+	at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:98)
+	at org.apache.jasper.compiler.Parser.parseOptionalBody(Parser.java:1006)
+	at org.apache.jasper.compiler.Parser.parseCustomTag(Parser.java:1291)
+	at org.apache.jasper.compiler.Parser.parseElements(Parser.java:1470)
+	at org.apache.jasper.compiler.Parser.parse(Parser.java:144)
+	at org.apache.jasper.compiler.ParserController.doParse(ParserController.java:244)
+	at org.apache.jasper.compiler.ParserController.parse(ParserController.java:105)
+	at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:206)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:386)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:362)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:605)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:400)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:171)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1393)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1077)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2021-07-07_11-59-14 [http-nio-8500-exec-7] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [/WEB-INF/views/delete-specialist-by-id.jsp (line: [45], column: [16]) Unterminated [&lt;c:out] tag] with root cause
+org.apache.jasper.JasperException: /WEB-INF/views/delete-specialist-by-id.jsp (line: [45], column: [16]) Unterminated [&lt;c:out] tag
+	at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:42)
+	at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:292)
+	at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:98)
+	at org.apache.jasper.compiler.Parser.parseOptionalBody(Parser.java:1006)
+	at org.apache.jasper.compiler.Parser.parseCustomTag(Parser.java:1291)
+	at org.apache.jasper.compiler.Parser.parseElements(Parser.java:1470)
+	at org.apache.jasper.compiler.Parser.parse(Parser.java:144)
+	at org.apache.jasper.compiler.ParserController.doParse(ParserController.java:244)
+	at org.apache.jasper.compiler.ParserController.parse(ParserController.java:105)
+	at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:206)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:386)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:362)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:605)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:400)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:171)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1393)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1077)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2021-07-07_12-19-41 [http-nio-8500-exec-6] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-07_12-19-41 [http-nio-8500-exec-6] ERROR c.c.p.e.GlobalExceptionHandler - [500] during [DELETE] to [http://localhost:8100/ipTreatmentOffering/deleteSpecialist/1] [IPTreatmentOfferingClient#deleteSpecialist(String,int)]: [{"timestamp":"2021-07-07T06:54:37.238+00:00","status":500,"error":"Internal Server Error","trace":"org.springframework.dao.EmptyResultDataAccessException: No class com.cts.mfpe.model.SpecialistDetail ... (9222 bytes)]
+2021-07-07_12-25-46 [http-nio-8500-exec-9] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-07_12-25-46 [http-nio-8500-exec-9] ERROR c.c.p.e.GlobalExceptionHandler - [500] during [DELETE] to [http://localhost:8100/ipTreatmentOffering/deleteSpecialist/5] [IPTreatmentOfferingClient#deleteSpecialist(String,int)]: [{"timestamp":"2021-07-07T06:56:39.632+00:00","status":500,"error":"Internal Server Error","trace":"org.springframework.dao.EmptyResultDataAccessException: No class com.cts.mfpe.model.SpecialistDetail ... (9222 bytes)]
+2021-07-07_12-25-46 [http-nio-8500-exec-10] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-07_12-25-46 [http-nio-8500-exec-10] ERROR c.c.p.e.GlobalExceptionHandler - [403] during [GET] to [http://localhost:8100/ipTreatmentOffering/specialists] [IPTreatmentOfferingClient#getAllSpecialist(String)]: [{"timeStamp":"07-07-2021 12:31:54","status":"FORBIDDEN","message":"Not allowed"}]
+2021-07-07_12-25-46 [http-nio-8500-exec-7] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-07_12-25-46 [http-nio-8500-exec-7] ERROR c.c.p.e.GlobalExceptionHandler - [403] during [GET] to [http://localhost:8100/ipTreatmentOffering/specialists] [IPTreatmentOfferingClient#getAllSpecialist(String)]: [{"timeStamp":"07-07-2021 12:31:57","status":"FORBIDDEN","message":"Not allowed"}]
+2021-07-07_12-25-46 [http-nio-8500-exec-1] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-07_12-25-46 [http-nio-8500-exec-1] ERROR c.c.p.e.GlobalExceptionHandler - [500] during [DELETE] to [http://localhost:8100/ipTreatmentOffering/deleteSpecialist/45] [IPTreatmentOfferingClient#deleteSpecialist(String,int)]: [{"timestamp":"2021-07-07T07:02:11.385+00:00","status":500,"error":"Internal Server Error","trace":"org.springframework.dao.EmptyResultDataAccessException: No class com.cts.mfpe.model.SpecialistDetail ... (9225 bytes)]
+2021-07-07_12-32-31 [http-nio-8500-exec-9] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-07_12-32-31 [http-nio-8500-exec-9] ERROR c.c.p.e.GlobalExceptionHandler - [500] during [DELETE] to [http://localhost:8100/ipTreatmentOffering/deleteSpecialist/5] [IPTreatmentOfferingClient#deleteSpecialist(String,int)]: [{"timestamp":"2021-07-07T07:04:49.518+00:00","status":500,"error":"Internal Server Error","trace":"org.springframework.dao.EmptyResultDataAccessException: No class com.cts.mfpe.model.SpecialistDetail ... (9222 bytes)]
+2021-07-07_12-39-15 [http-nio-8500-exec-5] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-07_12-39-15 [http-nio-8500-exec-5] ERROR c.c.p.e.GlobalExceptionHandler - [500] during [DELETE] to [http://localhost:8100/ipTreatmentOffering/deleteSpecialist/2] [IPTreatmentOfferingClient#deleteSpecialist(String,int)]: [{"timestamp":"2021-07-07T07:09:38.175+00:00","status":500,"error":"Internal Server Error","trace":"org.springframework.dao.EmptyResultDataAccessException: No class com.cts.mfpe.model.SpecialistDetail ... (9222 bytes)]
+2021-07-07_12-50-18 [http-nio-8500-exec-9] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-07_12-50-18 [http-nio-8500-exec-9] ERROR c.c.p.e.GlobalExceptionHandler - [500] during [DELETE] to [http://localhost:8100/ipTreatmentOffering/deleteSpecialist/5] [IPTreatmentOfferingClient#deleteSpecialist(String,int)]: [{"timestamp":"2021-07-07T07:20:40.968+00:00","status":500,"error":"Internal Server Error","trace":"org.springframework.dao.EmptyResultDataAccessException: No class com.cts.mfpe.model.SpecialistDetail ... (9222 bytes)]
+2021-07-07_12-54-18 [http-nio-8500-exec-5] ERROR c.c.p.e.GlobalExceptionHandler - handles by
+2021-07-07_12-54-18 [http-nio-8500-exec-5] ERROR c.c.p.e.GlobalExceptionHandler - Handler dispatch failed; nested exception is java.lang.Error: Unresolved compilation problem: 
+	Duplicate local variable specialists
+
+2021-07-07_12-56-35 [http-nio-8500-exec-10] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-07_12-56-35 [http-nio-8500-exec-10] ERROR c.c.p.e.GlobalExceptionHandler - [403] during [GET] to [http://localhost:8100/ipTreatmentOffering/specialists] [IPTreatmentOfferingClient#getAllSpecialist(String)]: [{"timeStamp":"07-07-2021 01:03:22","status":"FORBIDDEN","message":"Not allowed"}]
+2021-07-07_12-56-35 [http-nio-8500-exec-6] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-07_12-56-35 [http-nio-8500-exec-6] ERROR c.c.p.e.GlobalExceptionHandler - [403] during [GET] to [http://localhost:8100/ipTreatmentOffering/specialists] [IPTreatmentOfferingClient#getAllSpecialist(String)]: [{"timeStamp":"07-07-2021 01:03:26","status":"FORBIDDEN","message":"Not allowed"}]
+2021-07-07_13-04-20 [http-nio-8500-exec-1] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-07_13-04-20 [http-nio-8500-exec-1] ERROR c.c.p.e.GlobalExceptionHandler - [403] during [GET] to [http://localhost:8100/ipTreatmentOffering/specialists] [IPTreatmentOfferingClient#getAllSpecialist(String)]: [{"timeStamp":"07-07-2021 01:04:21","status":"FORBIDDEN","message":"Not allowed"}]
+2021-07-07_13-04-20 [http-nio-8500-exec-5] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-07_13-04-20 [http-nio-8500-exec-5] ERROR c.c.p.e.GlobalExceptionHandler - [403] during [GET] to [http://localhost:8100/ipTreatmentOffering/specialists] [IPTreatmentOfferingClient#getAllSpecialist(String)]: [{"timeStamp":"07-07-2021 01:04:33","status":"FORBIDDEN","message":"Not allowed"}]

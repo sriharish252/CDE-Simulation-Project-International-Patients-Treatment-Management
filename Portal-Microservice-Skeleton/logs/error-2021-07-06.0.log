@@ -1,0 +1,18 @@
+2021-07-06_12-14-39 [http-nio-8500-exec-4] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-06_12-14-39 [http-nio-8500-exec-4] ERROR c.c.p.e.GlobalExceptionHandler - Connection refused: no further information executing GET http://localhost:8200/ipTreatment/getAllTreatmentPlan
+2021-07-06_12-14-39 [http-nio-8500-exec-3] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-06_12-14-39 [http-nio-8500-exec-3] ERROR c.c.p.e.GlobalExceptionHandler - Connection refused: no further information executing GET http://localhost:8200/ipTreatment/getAllTreatmentPlan
+2021-07-06_12-14-39 [http-nio-8500-exec-7] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-06_12-14-39 [http-nio-8500-exec-7] ERROR c.c.p.e.GlobalExceptionHandler - Connection refused: no further information executing GET http://localhost:8300/insure/getAllInsurerDetail
+2021-07-06_12-14-39 [http-nio-8500-exec-3] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-06_12-14-39 [http-nio-8500-exec-3] ERROR c.c.p.e.GlobalExceptionHandler - Connection refused: no further information executing GET http://localhost:8200/ipTreatment/getAllTreatmentPlan
+2021-07-06_12-14-39 [http-nio-8500-exec-10] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-06_12-14-39 [http-nio-8500-exec-10] ERROR c.c.p.e.GlobalExceptionHandler - Connection refused: no further information executing GET http://localhost:8200/ipTreatment/getAllTreatmentPlan
+2021-07-06_12-14-39 [http-nio-8500-exec-4] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-06_12-14-39 [http-nio-8500-exec-4] ERROR c.c.p.e.GlobalExceptionHandler - Connection refused: no further information executing GET http://localhost:8200/ipTreatment/getAllTreatmentPlan
+2021-07-06_12-14-39 [http-nio-8500-exec-3] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-06_12-14-39 [http-nio-8500-exec-3] ERROR c.c.p.e.GlobalExceptionHandler - Connection refused: no further information executing GET http://localhost:8200/ipTreatment/getAllTreatmentPlan
+2021-07-06_12-14-39 [http-nio-8500-exec-6] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-06_12-14-39 [http-nio-8500-exec-6] ERROR c.c.p.e.GlobalExceptionHandler - Connection refused: no further information executing GET http://localhost:8200/ipTreatment/getAllTreatmentPlan
+2021-07-06_12-14-39 [http-nio-8500-exec-9] ERROR c.c.p.e.GlobalExceptionHandler - handles by handleFeignStatusException
+2021-07-06_12-14-39 [http-nio-8500-exec-9] ERROR c.c.p.e.GlobalExceptionHandler - Connection refused: no further information executing GET http://localhost:8300/insure/getAllInsurerDetail
