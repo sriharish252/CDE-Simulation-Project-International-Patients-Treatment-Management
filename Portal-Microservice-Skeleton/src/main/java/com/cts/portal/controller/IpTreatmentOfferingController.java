@@ -230,4 +230,35 @@ public class IpTreatmentOfferingController {
 				}
 	}
 	
+	//***********************************************
+	//update package get and post mapping
+	@GetMapping("/updatePackage") 
+	public ModelAndView viewUpdatePackage(@ModelAttribute("getPackage") GetPackage getPackage, HttpServletRequest request) throws Exception
+	{ 
+		if ((String) request.getSession().getAttribute("Authorization") == null) {
+
+			ModelAndView login = new ModelAndView("error-page401");
+			return login; 
+		}       
+		ModelAndView model = new ModelAndView("update-package"); 
+		model.addObject("getPackage",getPackage);
+		return model;       
+	} 
+	
+	@PostMapping("/updatePackage") 
+	public String updatePackage(@ModelAttribute("getPackage") GetPackage getPackage, Model model, HttpServletRequest request) throws Exception
+	{ 
+		if ((String) request.getSession().getAttribute("Authorization") == null) {
+			return "error-page401"; 
+		}       
+		if(getPackage.getPid()!=0)
+		{ 
+			System.out.println("Inside update");
+	 		ResponseEntity<String> entity=client.updatePackage((String) request.getSession().getAttribute("Authorization"),
+	 				getPackage.getPid(), getPackage.getTreatmentPackageName());
+		} 
+		model.addAttribute("getPackage", getPackage);
+		return "update-package";       
+	} 
+	
 }
