@@ -112,7 +112,7 @@ public class IPTreatmentOfferingController {
 		}
 	}
 	
-	--------------------------------------------------------
+	//--------------------------------------------------------
 // addSpecialist endpoint : it will add the specialist details in the database and return the status of the action as boolean
 	@PostMapping(path = "/addSpecialist")
 	public ResponseEntity<String> addSpecialist(
