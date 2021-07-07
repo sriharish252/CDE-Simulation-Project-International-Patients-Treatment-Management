@@ -114,6 +114,46 @@ public class IpTreatmentOfferingController {
 		}
 		return model;
 	}
+	/**
+	 * 
+	 * @param areaOfExpertise
+	 * @param request
+	 * @return
+	 * @throws Exception
+	 */
+	@GetMapping(value = "/viewSpecialistsByExpertise")
+	public ModelAndView showSpecialistsByExpertise(@ModelAttribute("areaOfExpertise") AreaOfExpertise areaOfExpertise,HttpServletRequest request) throws Exception {
+		
+		if ((String) request.getSession().getAttribute("Authorization") == null) {
+
+			ModelAndView login = new ModelAndView("error-page401");
+			return login;
+		}
+		/* 
+		 * get the list of specialists By Expertise using feign client of IPOfferingMicroservice
+		 */
+		System.out.println("Inside /viewSpecialistsByExpertise");
+		ModelAndView model = new ModelAndView("admin-view-specialists-by-expertise");
+		if(areaOfExpertise.getAilment() != null)
+		{
+			try {
+				/*
+				 * get the specialist by expertise
+				 * using feign client of IPOfferingMicroservice 
+				 */
+				List<SpecialistDetail> specialists = client.getAllSpecialistsByExpertise(
+						(String) request.getSession().getAttribute("Authorization"),
+						areaOfExpertise.getAilment());
+				model.addObject("specialists", specialists);
+			} catch (FeignException e) {
+				model.addObject("error","Connection exception. Try Again!");
+			} 
+		}
+		
+		
+		return model; 
+	}
+	
 
 	@ModelAttribute("ailmentList")
 	public Set<String> populateAilmentEnumList() {
