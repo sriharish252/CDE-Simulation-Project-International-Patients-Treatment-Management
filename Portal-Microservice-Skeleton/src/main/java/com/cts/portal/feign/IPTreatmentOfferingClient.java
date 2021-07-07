@@ -45,4 +45,9 @@ public interface IPTreatmentOfferingClient {
 			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader,
 			@RequestBody SpecialistDetail specialistDetail);
 	
+	//*************************************
+	
+	@PutMapping("/updatePackage/{pid}/{treatmentPackageName}")
+	public ResponseEntity<String> updatePackage(
+			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader, @PathVariable int pid, @PathVariable String treatmentPackageName) throws AuthorizationException;
 }
