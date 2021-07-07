@@ -92,6 +92,24 @@ public class IPTreatmentOfferingController {
 			throw new AuthorizationException("Not allowed");
 		}
 	}
+	/**
+	 * @param requestTokenHeader
+	 * @param ailment
+	 * @return
+	 * @throws AuthorizationException
+	 * @throws IPTreatmentPackageNotFoundException 
+	 * @throws Exception
+	 */
+	@GetMapping("/specialistsByExpertsise/{areaOfExpertise}")
+	public List<SpecialistDetail> getSpecialistByExpertise(
+			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader,
+			@ApiParam(name = "areaOfExpertise", value = "areaOfExpertise of the specialist") @PathVariable AilmentCategory areaOfExpertise) throws AuthorizationException, IPTreatmentPackageNotFoundException {
+		if (authorisingClient.authorizeTheRequest(requestTokenHeader)) {
+			return ipOfferingService.findAllSpecialistsByExpertise(areaOfExpertise);
+		} else {
+			throw new AuthorizationException("Not allowed");
+		}
+	}
 
 	@GetMapping("/health-check")
 	public ResponseEntity<String> healthCheck() {
