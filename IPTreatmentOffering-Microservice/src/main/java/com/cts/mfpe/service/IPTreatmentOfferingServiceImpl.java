@@ -76,5 +76,18 @@ public class IPTreatmentOfferingServiceImpl implements IPTreatmentOfferingServic
 	public SpecialistDetail findSpecialistById(int id) {
 		return specialistRepository.findById(id).get();
 	}
+	
+	//*****************************************
+	//implemented method  
+	@Override
+	@Transactional
+	public void updateTreatmentPackage(int pid, String treatmentPackageName) {
+		// TODO Auto-generated method stub
+		System.out.println("Updating using pid,tpname");
+		//redirecting to repo
+		packageDetailRepository.updateById(pid, treatmentPackageName);
+		System.out.println("Updated!!!---");
+		log.info("[Package updated successfully] ");
+	}
 
 }
