@@ -17,5 +17,10 @@ public interface IPTreatmentOfferingService {
 	
 	void deleteSpecialist(int specialistId);
 	
+	//------------------------------------------
+	
+	boolean addSpecialist(SpecialistDetail specialistDetail);
+	long getSpecialistsCount();
+	SpecialistDetail findSpecialistById(int id);
 	
 }
