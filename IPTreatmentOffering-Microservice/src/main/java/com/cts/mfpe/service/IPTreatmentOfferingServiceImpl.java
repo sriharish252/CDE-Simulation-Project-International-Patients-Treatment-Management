@@ -2,6 +2,8 @@ package com.cts.mfpe.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
@@ -11,6 +13,7 @@ import com.cts.mfpe.model.AilmentCategory;
 import com.cts.mfpe.model.IPTreatmentPackage;
 import com.cts.mfpe.model.SpecialistDetail;
 import com.cts.mfpe.repository.IPTreatmentPackageRepository;
+import com.cts.mfpe.repository.PackageDetailRepository;
 import com.cts.mfpe.repository.SpecialistDetailRepository;
 
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +27,9 @@ public class IPTreatmentOfferingServiceImpl implements IPTreatmentOfferingServic
 
 	@Autowired
 	SpecialistDetailRepository specialistRepository;
+	
+	@Autowired
+	PackageDetailRepository packageDetailRepository;
 
 	@Override
 	public List<IPTreatmentPackage> findAllIPTreatmentPackages() {
