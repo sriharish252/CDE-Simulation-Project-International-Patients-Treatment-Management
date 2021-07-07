@@ -12,6 +12,9 @@ public interface IPTreatmentOfferingService {
 	List<IPTreatmentPackage> findAllIPTreatmentPackages();
 	IPTreatmentPackage findIPTreatmentPackageByName(AilmentCategory ailment, String packageName) throws IPTreatmentPackageNotFoundException;
 	List<SpecialistDetail> findAllSpecialists();
+	//specialistByExpertise
+	List<SpecialistDetail> findAllSpecialistsByExpertise(AilmentCategory ailment) throws IPTreatmentPackageNotFoundException;
+
 	
 	////////////////////////////////////////////
 	
