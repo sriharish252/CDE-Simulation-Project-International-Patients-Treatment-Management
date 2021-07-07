@@ -32,7 +32,8 @@ public interface IPTreatmentOfferingClient {
 	
 	@GetMapping("/specialists")
 	public List<SpecialistDetail> getAllSpecialist(@RequestHeader(value = "Authorization", required = true) String requestTokenHeader) throws AuthorizationException;
-	
+	@GetMapping("/specialistsByExpertsise/{areaOfExpertise}")
+	public List<SpecialistDetail> getAllSpecialistsByExpertise(@RequestHeader(value = "Authorization", required = true) String requestTokenHeader,@PathVariable AilmentCategory areaOfExpertise) throws AuthorizationException;
 	
 	///////////////////////////////////////////////////////////////////////////////////
 	
