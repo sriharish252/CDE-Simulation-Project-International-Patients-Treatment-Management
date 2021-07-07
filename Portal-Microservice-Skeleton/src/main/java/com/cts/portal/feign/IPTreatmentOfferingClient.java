@@ -39,6 +39,10 @@ public interface IPTreatmentOfferingClient {
 	@DeleteMapping("/deleteSpecialist/{specialistId}")
 	public ResponseEntity<String> deleteSpecialist(@RequestHeader(value = "Authorization", required = true) String requestTokenHeader, @PathVariable(value="specialistId") int specialistId) throws AuthorizationException;
 	
-	
+	//----------------------------------------------------------------------
+	@PostMapping("/addSpecialist")
+	public ResponseEntity<String> addSpecialist(
+			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader,
+			@RequestBody SpecialistDetail specialistDetail);
 	
 }
