@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.cts.portal.exception.AuthorizationException;
 import com.cts.portal.exception.IPTreatmentPackageNotFoundException;
 import com.cts.portal.feign.IPTreatmentOfferingClient;
+import com.cts.portal.model.AreaOfExpertise;
 import com.cts.portal.model.FormInputGetBySpecialistId;
 import com.cts.portal.model.FormInputsGetByPackageName;
 import com.cts.portal.model.GetPackage;
