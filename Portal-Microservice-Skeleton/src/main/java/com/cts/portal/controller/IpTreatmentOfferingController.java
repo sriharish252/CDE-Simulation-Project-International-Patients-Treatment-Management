@@ -173,6 +173,61 @@ public class IpTreatmentOfferingController {
 		return model;
 	}
 		
+	//--------------------------------------------------
+	@GetMapping(value = "/addSpecialist")
+	public ModelAndView getAddSpecialist(	// for showing the add specialist form
+			HttpServletRequest request,
+			@ModelAttribute("specialistDetail") SpecialistDetail specialistDetail
+			) {
+		String requestToken = (String) request.getSession().getAttribute("Authorization");
+		if(request.getSession().getAttribute("userName").equals("admin")) {	// checks if admin or not
+			//System.out.println("\n************\n Its admin\n***************\n");
+			ModelAndView mav = new ModelAndView();
+			mav.addObject(specialistDetail);
+			mav.setViewName("specialist-register-page");
+			return mav;
+		}
+		else {
+			return new ModelAndView("error-page401");
+		}
+	}
 	
+	
+	@PostMapping(value = "/addSpecialist")
+	public ModelAndView addSpecialist(		// for getting add specialist data
+			HttpServletRequest request,
+			@ModelAttribute("specialistDetail") SpecialistDetail specialistDetail){
+				//System.out.println(specialistDetail);
+				String requestToken = (String) request.getSession().getAttribute("Authorization");
+				if(request.getSession().getAttribute("userName").equals("admin")) {	// checks if admin or not
+					//System.out.println("\n************\n Its admin\n***************\n");
+					if (requestToken != null) {
+						// adding the specialist using FeignClient
+						ResponseEntity<String> responseFromClient = client.addSpecialist(requestToken, specialistDetail);
+						
+						// creating ModelAndView
+						ModelAndView mav = new ModelAndView();
+						mav.addObject("message", "New Specialist Added!");
+						try {
+							mav.addObject("specialists", client.getAllSpecialist(requestToken));
+						} catch (AuthorizationException e) {
+							System.out.println("Can't fetch Specialist List");
+						}
+						mav.setViewName("admin-view-list-of-specialist-page");
+						mav.setStatus(responseFromClient.getStatusCode());	// taking HttpStatus from FeignClient response
+						return mav;
+					}
+					else {
+						ModelAndView login = new ModelAndView("error-page401");
+						return login;	
+					}
+				}
+				else {
+					//System.out.println("\n************\n Its Not admin\n***************\n");
+					ModelAndView login = new ModelAndView("error-page401");
+					login.setStatus(HttpStatus.UNAUTHORIZED);
+					return login;	
+				}
+	}
 	
 }
