@@ -128,6 +128,28 @@ public class IPTreatmentOfferingController {
 				} else {
 					throw new AuthorizationException("Not allowed");
 				}
-	}	
+	}
+	
+	//*********
+	/*
+	 * Put Mapping 
+	 * Updating the packages if id is provided to update treatment package name
+	 */	
+	@PutMapping("/updatePackage/{pid}/{treatmentPackageName}")
+	public ResponseEntity<String> updatePackage(
+			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader,
+			@ApiParam(name = "pid", value = "id of the package") @PathVariable int pid,
+			@ApiParam(name = "treatmentPackageName", value = "name of the package") @PathVariable String treatmentPackageName) throws AuthorizationException{
+		if (authorisingClient.authorizeTheRequest(requestTokenHeader)) {
+			//System.out.println("BeforeUPdate");
+			System.out.println(pid +" " +treatmentPackageName);
+			ipOfferingService.updateTreatmentPackage(pid, treatmentPackageName);
+			//System.out.println("Updated !!!----");
+			return new ResponseEntity<>("Updated Succesfully", HttpStatus.OK);
+		} else {
+			System.out.println("Error in Updating---!!!!");
+			throw new AuthorizationException("Not allowed");
+		}
+	}
 	
 }
