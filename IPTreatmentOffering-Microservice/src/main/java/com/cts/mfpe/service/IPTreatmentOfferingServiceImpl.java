@@ -50,6 +50,13 @@ public class IPTreatmentOfferingServiceImpl implements IPTreatmentOfferingServic
 		log.info("[Specialist details:] " + specialists);
 		return specialists;
 	}
+	//SpecialistByExpertise
+	@Override
+	public List<SpecialistDetail> findAllSpecialistsByExpertise(AilmentCategory areaOfExpertise) {
+		List<SpecialistDetail> specialists = specialistRepository.findByExpertise(areaOfExpertise);
+		log.info("[Specialist details:] " + specialists);
+		return specialists;
+	}
 	
 	
 	///////////////////////////////////////
@@ -60,6 +67,34 @@ public class IPTreatmentOfferingServiceImpl implements IPTreatmentOfferingServic
 		log.info("[Specialist deleted successfully] ");
 	}
 	
+	//------------------------------------
 	
+	@Override
+	public boolean addSpecialist(SpecialistDetail specialistDetail) {	// add specialist details to the specialist repository
+		specialistRepository.save(specialistDetail);
+		return true;
+	}
+
+	public long getSpecialistsCount() {
+		return specialistRepository.count();
+	}
+	
+	@Override
+	public SpecialistDetail findSpecialistById(int id) {
+		return specialistRepository.findById(id).get();
+	}
+	
+	//*****************************************
+	//implemented method  
+	@Override
+	@Transactional
+	public void updateTreatmentPackage(int pid, String treatmentPackageName) {
+		// TODO Auto-generated method stub
+		System.out.println("Updating using pid,tpname");
+		//redirecting to repo
+		packageDetailRepository.updateById(pid, treatmentPackageName);
+		System.out.println("Updated!!!---");
+		log.info("[Package updated successfully] ");
+	}
 
 }

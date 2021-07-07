@@ -92,6 +92,24 @@ public class IPTreatmentOfferingController {
 			throw new AuthorizationException("Not allowed");
 		}
 	}
+	/**
+	 * @param requestTokenHeader
+	 * @param ailment
+	 * @return
+	 * @throws AuthorizationException
+	 * @throws IPTreatmentPackageNotFoundException 
+	 * @throws Exception
+	 */
+	@GetMapping("/specialistsByExpertsise/{areaOfExpertise}")
+	public List<SpecialistDetail> getSpecialistByExpertise(
+			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader,
+			@ApiParam(name = "areaOfExpertise", value = "areaOfExpertise of the specialist") @PathVariable AilmentCategory areaOfExpertise) throws AuthorizationException, IPTreatmentPackageNotFoundException {
+		if (authorisingClient.authorizeTheRequest(requestTokenHeader)) {
+			return ipOfferingService.findAllSpecialistsByExpertise(areaOfExpertise);
+		} else {
+			throw new AuthorizationException("Not allowed");
+		}
+	}
 
 	@GetMapping("/health-check")
 	public ResponseEntity<String> healthCheck() {
@@ -112,5 +130,44 @@ public class IPTreatmentOfferingController {
 		}
 	}
 	
+	//--------------------------------------------------------
+// addSpecialist endpoint : it will add the specialist details in the database and return the status of the action as boolean
+	@PostMapping(path = "/addSpecialist")
+	public ResponseEntity<String> addSpecialist(
+			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader,
+			@RequestBody SpecialistDetail specialistDetail)	// for taking json request body from other microservice
+					throws AuthorizationException {
+				if (authorisingClient.authorizeTheRequest(requestTokenHeader)) {	//authorization part
+					// write your code
+					if(ipOfferingService.addSpecialist(specialistDetail)) {
+						System.out.println("Specialist Added");
+					}
+					return new ResponseEntity<String>("Added : "+specialistDetail, HttpStatus.OK);
+				} else {
+					throw new AuthorizationException("Not allowed");
+				}
+	}
+	
+	//*********
+	/*
+	 * Put Mapping 
+	 * Updating the packages if id is provided to update treatment package name
+	 */	
+	@PutMapping("/updatePackage/{pid}/{treatmentPackageName}")
+	public ResponseEntity<String> updatePackage(
+			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader,
+			@ApiParam(name = "pid", value = "id of the package") @PathVariable int pid,
+			@ApiParam(name = "treatmentPackageName", value = "name of the package") @PathVariable String treatmentPackageName) throws AuthorizationException{
+		if (authorisingClient.authorizeTheRequest(requestTokenHeader)) {
+			//System.out.println("BeforeUPdate");
+			System.out.println(pid +" " +treatmentPackageName);
+			ipOfferingService.updateTreatmentPackage(pid, treatmentPackageName);
+			//System.out.println("Updated !!!----");
+			return new ResponseEntity<>("Updated Succesfully", HttpStatus.OK);
+		} else {
+			System.out.println("Error in Updating---!!!!");
+			throw new AuthorizationException("Not allowed");
+		}
+	}
 	
 }

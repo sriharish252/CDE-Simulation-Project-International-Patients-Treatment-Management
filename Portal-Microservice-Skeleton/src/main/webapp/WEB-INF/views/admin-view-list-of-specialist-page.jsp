@@ -32,10 +32,13 @@
 			<div class="content list-container">
 				<h1>Our Specialists</h1>
 				<div class="container">
+					<div class="alert alert-light">
+            			${message}
+        			</div>
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th>#</th>
+								<th>Id</th>
 								<th>Name</th>
 								<th>Area of Expertise</th>
 								<th>experience (year)</th>

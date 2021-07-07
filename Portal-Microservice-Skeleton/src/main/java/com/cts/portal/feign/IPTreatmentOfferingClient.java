@@ -32,13 +32,23 @@ public interface IPTreatmentOfferingClient {
 	
 	@GetMapping("/specialists")
 	public List<SpecialistDetail> getAllSpecialist(@RequestHeader(value = "Authorization", required = true) String requestTokenHeader) throws AuthorizationException;
-	
+	@GetMapping("/specialistsByExpertsise/{areaOfExpertise}")
+	public List<SpecialistDetail> getAllSpecialistsByExpertise(@RequestHeader(value = "Authorization", required = true) String requestTokenHeader,@PathVariable AilmentCategory areaOfExpertise) throws AuthorizationException;
 	
 	///////////////////////////////////////////////////////////////////////////////////
 	
 	@DeleteMapping("/deleteSpecialist/{specialistId}")
 	public ResponseEntity<String> deleteSpecialist(@RequestHeader(value = "Authorization", required = true) String requestTokenHeader, @PathVariable(value="specialistId") int specialistId) throws AuthorizationException;
 	
+	//----------------------------------------------------------------------
+	@PostMapping("/addSpecialist")
+	public ResponseEntity<String> addSpecialist(
+			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader,
+			@RequestBody SpecialistDetail specialistDetail);
 	
+	//*************************************
 	
+	@PutMapping("/updatePackage/{pid}/{treatmentPackageName}")
+	public ResponseEntity<String> updatePackage(
+			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader, @PathVariable int pid, @PathVariable String treatmentPackageName) throws AuthorizationException;
 }

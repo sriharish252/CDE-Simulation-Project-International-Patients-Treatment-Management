@@ -114,6 +114,46 @@ public class IpTreatmentOfferingController {
 		}
 		return model;
 	}
+	/**
+	 * 
+	 * @param areaOfExpertise
+	 * @param request
+	 * @return
+	 * @throws Exception
+	 */
+	@GetMapping(value = "/viewSpecialistsByExpertise")
+	public ModelAndView showSpecialistsByExpertise(@ModelAttribute("areaOfExpertise") AreaOfExpertise areaOfExpertise,HttpServletRequest request) throws Exception {
+		
+		if ((String) request.getSession().getAttribute("Authorization") == null) {
+
+			ModelAndView login = new ModelAndView("error-page401");
+			return login;
+		}
+		/* 
+		 * get the list of specialists By Expertise using feign client of IPOfferingMicroservice
+		 */
+		System.out.println("Inside /viewSpecialistsByExpertise");
+		ModelAndView model = new ModelAndView("admin-view-specialists-by-expertise");
+		if(areaOfExpertise.getAilment() != null)
+		{
+			try {
+				/*
+				 * get the specialist by expertise
+				 * using feign client of IPOfferingMicroservice 
+				 */
+				List<SpecialistDetail> specialists = client.getAllSpecialistsByExpertise(
+						(String) request.getSession().getAttribute("Authorization"),
+						areaOfExpertise.getAilment());
+				model.addObject("specialists", specialists);
+			} catch (FeignException e) {
+				model.addObject("error","Connection exception. Try Again!");
+			} 
+		}
+		
+		
+		return model; 
+	}
+	
 
 	@ModelAttribute("ailmentList")
 	public Set<String> populateAilmentEnumList() {
@@ -173,6 +213,92 @@ public class IpTreatmentOfferingController {
 		return model;
 	}
 		
+	//--------------------------------------------------
+	@GetMapping(value = "/addSpecialist")
+	public ModelAndView getAddSpecialist(	// for showing the add specialist form
+			HttpServletRequest request,
+			@ModelAttribute("specialistDetail") SpecialistDetail specialistDetail
+			) {
+		String requestToken = (String) request.getSession().getAttribute("Authorization");
+		if(request.getSession().getAttribute("userName").equals("admin")) {	// checks if admin or not
+			//System.out.println("\n************\n Its admin\n***************\n");
+			ModelAndView mav = new ModelAndView();
+			mav.addObject(specialistDetail);
+			mav.setViewName("specialist-register-page");
+			return mav;
+		}
+		else {
+			return new ModelAndView("error-page401");
+		}
+	}
 	
+	
+	@PostMapping(value = "/addSpecialist")
+	public ModelAndView addSpecialist(		// for getting add specialist data
+			HttpServletRequest request,
+			@ModelAttribute("specialistDetail") SpecialistDetail specialistDetail){
+				//System.out.println(specialistDetail);
+				String requestToken = (String) request.getSession().getAttribute("Authorization");
+				if(request.getSession().getAttribute("userName").equals("admin")) {	// checks if admin or not
+					//System.out.println("\n************\n Its admin\n***************\n");
+					if (requestToken != null) {
+						// adding the specialist using FeignClient
+						ResponseEntity<String> responseFromClient = client.addSpecialist(requestToken, specialistDetail);
+						
+						// creating ModelAndView
+						ModelAndView mav = new ModelAndView();
+						mav.addObject("message", "New Specialist Added!");
+						try {
+							mav.addObject("specialists", client.getAllSpecialist(requestToken));
+						} catch (AuthorizationException e) {
+							System.out.println("Can't fetch Specialist List");
+						}
+						mav.setViewName("admin-view-list-of-specialist-page");
+						mav.setStatus(responseFromClient.getStatusCode());	// taking HttpStatus from FeignClient response
+						return mav;
+					}
+					else {
+						ModelAndView login = new ModelAndView("error-page401");
+						return login;	
+					}
+				}
+				else {
+					//System.out.println("\n************\n Its Not admin\n***************\n");
+					ModelAndView login = new ModelAndView("error-page401");
+					login.setStatus(HttpStatus.UNAUTHORIZED);
+					return login;	
+				}
+	}
+	
+	//***********************************************
+	//update package get and post mapping
+	@GetMapping("/updatePackage") 
+	public ModelAndView viewUpdatePackage(@ModelAttribute("getPackage") GetPackage getPackage, HttpServletRequest request) throws Exception
+	{ 
+		if ((String) request.getSession().getAttribute("Authorization") == null) {
+
+			ModelAndView login = new ModelAndView("error-page401");
+			return login; 
+		}       
+		ModelAndView model = new ModelAndView("update-package"); 
+		model.addObject("getPackage",getPackage);
+		return model;       
+	} 
+	
+	@PostMapping("/updatePackage") 
+	public String updatePackage(@ModelAttribute("getPackage") GetPackage getPackage, Model model, HttpServletRequest request) throws Exception
+	{ 
+		if ((String) request.getSession().getAttribute("Authorization") == null) {
+			return "error-page401"; 
+		}       
+		if(getPackage.getPid()!=0)
+		{ 
+			System.out.println("Inside update");
+	 		ResponseEntity<String> entity=client.updatePackage((String) request.getSession().getAttribute("Authorization"),
+	 				getPackage.getPid(), getPackage.getTreatmentPackageName());
+		} 
+		model.addAttribute("getPackage", getPackage);
+		return "update-package";       
+	} 
 	
 }

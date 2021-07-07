@@ -7,5 +7,7 @@ import com.cts.mfpe.model.SpecialistDetail;
 
 @Repository
 public interface SpecialistDetailRepository extends JpaRepository<SpecialistDetail, Integer> {
+  @Query("Select s from SpecialistDetail s where s.areaOfExpertise = ?1")
+	List<SpecialistDetail> findByExpertise(AilmentCategory areaOfExpertise);
 
 }

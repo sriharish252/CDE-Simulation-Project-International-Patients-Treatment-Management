@@ -7,5 +7,8 @@ import com.cts.mfpe.model.PackageDetail;
 
 @Repository
 public interface PackageDetailRepository extends JpaRepository<PackageDetail, Integer> {
-
+        //**********
+        @Modifying
+	      @Query("update PackageDetail SET treatmentPackageName=:treatmentPackageName WHERE pid=:pid")
+	      void updateById(@Param("pid") int pid, @Param("treatmentPackageName") String treatmentPackageName);
 }

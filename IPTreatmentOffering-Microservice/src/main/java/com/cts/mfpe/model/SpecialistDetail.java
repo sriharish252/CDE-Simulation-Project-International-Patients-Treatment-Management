@@ -22,6 +22,8 @@ import lombok.ToString;
 @Table(name = "specialists")
 public class SpecialistDetail {
 	
+	// setter part is added --
+	@Setter
 	@ApiModelProperty(notes="Id of the Specialist")
     @Id
 	private int specialistId;

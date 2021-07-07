@@ -81,6 +81,8 @@ public class LoginRegisterController {
 		
 		request.getSession().setAttribute("Authorization", "Bearer " + token);
 		request.getSession().setAttribute("userName", user.getUserName());
-		return "admin-welcome-page";
+		
+		// change for checking admin or not -- Deep Roy
+		return (user.getUserName().equals("admin"))? "admin-welcome-page" : "user-welcome-page";
 	}
 }
