@@ -60,6 +60,21 @@ public class IPTreatmentOfferingServiceImpl implements IPTreatmentOfferingServic
 		log.info("[Specialist deleted successfully] ");
 	}
 	
+	//------------------------------------
 	
+	@Override
+	public boolean addSpecialist(SpecialistDetail specialistDetail) {	// add specialist details to the specialist repository
+		specialistRepository.save(specialistDetail);
+		return true;
+	}
+
+	public long getSpecialistsCount() {
+		return specialistRepository.count();
+	}
+	
+	@Override
+	public SpecialistDetail findSpecialistById(int id) {
+		return specialistRepository.findById(id).get();
+	}
 
 }
