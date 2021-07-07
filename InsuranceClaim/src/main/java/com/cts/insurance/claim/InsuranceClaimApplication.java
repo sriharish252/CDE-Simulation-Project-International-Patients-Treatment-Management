@@ -10,5 +10,5 @@ public class InsuranceClaimApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(InsuranceClaimApplication.class, args);
 	}
-
+ 
 }
