@@ -112,5 +112,22 @@ public class IPTreatmentOfferingController {
 		}
 	}
 	
+	--------------------------------------------------------
+// addSpecialist endpoint : it will add the specialist details in the database and return the status of the action as boolean
+	@PostMapping(path = "/addSpecialist")
+	public ResponseEntity<String> addSpecialist(
+			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader,
+			@RequestBody SpecialistDetail specialistDetail)	// for taking json request body from other microservice
+					throws AuthorizationException {
+				if (authorisingClient.authorizeTheRequest(requestTokenHeader)) {	//authorization part
+					// write your code
+					if(ipOfferingService.addSpecialist(specialistDetail)) {
+						System.out.println("Specialist Added");
+					}
+					return new ResponseEntity<String>("Added : "+specialistDetail, HttpStatus.OK);
+				} else {
+					throw new AuthorizationException("Not allowed");
+				}
+	}	
 	
 }
