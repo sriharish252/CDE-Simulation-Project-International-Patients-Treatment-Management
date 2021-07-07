@@ -23,4 +23,8 @@ public interface IPTreatmentOfferingService {
 	long getSpecialistsCount();
 	SpecialistDetail findSpecialistById(int id);
 	
+	//************************
+	//updatetreatmentpackage
+	void updateTreatmentPackage(int pid, String treatmentPackageName);
+	
 }
