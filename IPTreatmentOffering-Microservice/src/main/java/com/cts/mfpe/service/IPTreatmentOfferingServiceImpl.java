@@ -50,6 +50,13 @@ public class IPTreatmentOfferingServiceImpl implements IPTreatmentOfferingServic
 		log.info("[Specialist details:] " + specialists);
 		return specialists;
 	}
+	//SpecialistByExpertise
+	@Override
+	public List<SpecialistDetail> findAllSpecialistsByExpertise(AilmentCategory areaOfExpertise) {
+		List<SpecialistDetail> specialists = specialistRepository.findByExpertise(areaOfExpertise);
+		log.info("[Specialist details:] " + specialists);
+		return specialists;
+	}
 	
 	
 	///////////////////////////////////////
