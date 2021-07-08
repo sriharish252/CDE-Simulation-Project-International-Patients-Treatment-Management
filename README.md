@@ -121,12 +121,12 @@ This microsevice provides the endpoints for viewing and modifying the treatment 
         <tr>
             <td>GET</td>
             <td>/ipTreatmentPackageByName/{ailment}/{packageName}</td>
-            <td>List of "IPTreatmentPackage"></td>
+            <td>List of "IPTreatmentPackage"</td>
         </tr>
         <tr>
             <td>GET</td>
             <td>/specialists</td>
-            <td>List of "SpecialistDetail"></td>
+            <td>List of "SpecialistDetail"</td>
         </tr>
         <tr>
             <td>POST</td>
@@ -136,7 +136,7 @@ This microsevice provides the endpoints for viewing and modifying the treatment 
         <tr>
             <td>DELETE</td>
             <td>/deleteSpecialist/{specialistId}</td>
-            <td>ResponseEntity of String type></td>
+            <td>ResponseEntity of String type</td>
         </tr>
         <tr>
             <td>PUT</td>
