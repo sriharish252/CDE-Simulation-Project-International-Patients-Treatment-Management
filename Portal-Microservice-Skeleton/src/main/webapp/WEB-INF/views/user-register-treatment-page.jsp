@@ -104,7 +104,7 @@
 													<th>Test Details</th>
 													<th>Cost</th>
 													<th>Specialist</th>
-													<th>COmmencementDate</th>
+													<th>CommencementDate</th>
 													<th>End Date</th>
 												</tr>
 											</thead>

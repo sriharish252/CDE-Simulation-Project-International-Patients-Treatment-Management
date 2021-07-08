@@ -701,3 +701,90 @@
 2021-07-07_16-32-53 [http-nio-8500-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
 2021-07-07_16-32-53 [RMI TCP Connection(65)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
 2021-07-07_16-32-53 [RMI TCP Connection(65)-127.0.0.1] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-07_19-27-34 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+2021-07-07_19-27-34 [restartedMain] INFO  c.c.p.PortalMicroserviceApplication - Starting PortalMicroserviceApplication using Java 15.0.2 on LAPTOP-BPATERIE with PID 8776 (C:\Users\sriha\git\CDE-Simulation-Project-International-Patients-Treatment-Management\Portal-Microservice-Skeleton\target\classes started by sriha in C:\Users\sriha\git\CDE-Simulation-Project-International-Patients-Treatment-Management\Portal-Microservice-Skeleton)
+2021-07-07_19-27-34 [restartedMain] INFO  c.c.p.PortalMicroserviceApplication - No active profile set, falling back to default profiles: default
+2021-07-07_19-27-34 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-07_19-27-34 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-07_19-27-34 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=2f4c7ee3-4fed-34b5-8722-3cb6bcc8954e
+2021-07-07_19-27-34 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.cts.portal.feign.AuthorisingClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-07_19-27-34 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.cts.portal.feign.IPTreatmentClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-07_19-27-34 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.cts.portal.feign.IPTreatmentOfferingClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-07_19-27-34 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.cts.portal.feign.InsuranceClaimClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-07_19-27-34 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8500 (http)
+2021-07-07_19-27-34 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8500"]
+2021-07-07_19-27-34 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2021-07-07_19-27-34 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-07_19-27-34 [restartedMain] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-07-07_19-27-34 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-07-07_19-27-34 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1390 ms
+2021-07-07_19-27-34 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-07-07_19-27-34 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-07_19-27-34 [restartedMain] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2021-07-07_19-27-34 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8500"]
+2021-07-07_19-27-34 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8500 (http) with context path ''
+2021-07-07_19-27-34 [restartedMain] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2021-07-07_19-27-34 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2021-07-07_19-27-34 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-07-07_19-27-34 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2021-07-07_19-27-34 [restartedMain] INFO  c.c.p.PortalMicroserviceApplication - Started PortalMicroserviceApplication in 5.97 seconds (JVM running for 6.75)
+2021-07-07_19-27-34 [http-nio-8500-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-07_19-27-34 [http-nio-8500-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-07-07_19-27-34 [http-nio-8500-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2021-07-07_19-27-34 [RMI TCP Connection(39)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2021-07-07_19-27-34 [RMI TCP Connection(39)-127.0.0.1] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-07_20-09-04 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+2021-07-07_20-09-04 [restartedMain] INFO  c.c.p.PortalMicroserviceApplication - Starting PortalMicroserviceApplication using Java 15.0.2 on LAPTOP-BPATERIE with PID 15784 (C:\Users\sriha\git\CDE-Simulation-Project-International-Patients-Treatment-Management\Portal-Microservice-Skeleton\target\classes started by sriha in C:\Users\sriha\git\CDE-Simulation-Project-International-Patients-Treatment-Management\Portal-Microservice-Skeleton)
+2021-07-07_20-09-04 [restartedMain] INFO  c.c.p.PortalMicroserviceApplication - No active profile set, falling back to default profiles: default
+2021-07-07_20-09-04 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-07_20-09-04 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-07_20-09-04 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=2f4c7ee3-4fed-34b5-8722-3cb6bcc8954e
+2021-07-07_20-09-04 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.cts.portal.feign.AuthorisingClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-07_20-09-04 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.cts.portal.feign.IPTreatmentClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-07_20-09-04 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.cts.portal.feign.IPTreatmentOfferingClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-07_20-09-04 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.cts.portal.feign.InsuranceClaimClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-07_20-09-04 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8500 (http)
+2021-07-07_20-09-04 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8500"]
+2021-07-07_20-09-04 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2021-07-07_20-09-04 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-07_20-09-04 [restartedMain] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-07-07_20-09-04 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-07-07_20-09-04 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1362 ms
+2021-07-07_20-09-04 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-07-07_20-09-04 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-07_20-09-04 [restartedMain] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2021-07-07_20-09-04 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8500"]
+2021-07-07_20-09-04 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8500 (http) with context path ''
+2021-07-07_20-09-04 [restartedMain] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2021-07-07_20-09-04 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2021-07-07_20-09-04 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-07-07_20-09-04 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2021-07-07_20-09-04 [restartedMain] INFO  c.c.p.PortalMicroserviceApplication - Started PortalMicroserviceApplication in 5.944 seconds (JVM running for 6.702)
+2021-07-07_20-09-04 [Thread-1] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-07_20-33-33 [restartedMain] INFO  c.c.p.PortalMicroserviceApplication - Starting PortalMicroserviceApplication using Java 15.0.2 on LAPTOP-BPATERIE with PID 15784 (C:\Users\sriha\git\CDE-Simulation-Project-International-Patients-Treatment-Management\Portal-Microservice-Skeleton\target\classes started by sriha in C:\Users\sriha\git\CDE-Simulation-Project-International-Patients-Treatment-Management\Portal-Microservice-Skeleton)
+2021-07-07_20-33-33 [restartedMain] INFO  c.c.p.PortalMicroserviceApplication - No active profile set, falling back to default profiles: default
+2021-07-07_20-33-33 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=2f4c7ee3-4fed-34b5-8722-3cb6bcc8954e
+2021-07-07_20-33-33 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.cts.portal.feign.AuthorisingClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-07_20-33-33 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.cts.portal.feign.IPTreatmentClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-07_20-33-33 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.cts.portal.feign.IPTreatmentOfferingClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-07_20-33-33 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.cts.portal.feign.InsuranceClaimClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-07_20-33-33 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8500 (http)
+2021-07-07_20-33-33 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8500"]
+2021-07-07_20-33-33 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2021-07-07_20-33-33 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-07-07_20-33-33 [restartedMain] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-07-07_20-33-33 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-07-07_20-33-33 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 430 ms
+2021-07-07_20-33-33 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-07-07_20-33-33 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-07_20-33-33 [restartedMain] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2021-07-07_20-33-33 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8500"]
+2021-07-07_20-33-33 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8500 (http) with context path ''
+2021-07-07_20-33-33 [restartedMain] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2021-07-07_20-33-33 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2021-07-07_20-33-33 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-07-07_20-33-33 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2021-07-07_20-33-33 [restartedMain] INFO  c.c.p.PortalMicroserviceApplication - Started PortalMicroserviceApplication in 4.107 seconds (JVM running for 1473.995)
+2021-07-07_20-33-33 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2021-07-07_20-33-33 [RMI TCP Connection(32)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2021-07-07_20-33-33 [RMI TCP Connection(32)-127.0.0.1] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'

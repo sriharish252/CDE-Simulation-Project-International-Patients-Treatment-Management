@@ -43,6 +43,7 @@ public class IpTreatmentOfferingController {
 	 * @return
 	 * @throws Exception
 	 */
+	/*
 	@GetMapping(value = "/specialists")
 	public ModelAndView showSpecialistPage(HttpServletRequest request) throws Exception {
 		
@@ -51,9 +52,7 @@ public class IpTreatmentOfferingController {
 			ModelAndView login = new ModelAndView("error-page401");
 			return login;
 		}
-		/*
-		 * get the list of specialists using feign client of IPOfferingMicroservice
-		 */
+		//get the list of specialists using feign client of IPOfferingMicroservice
 		System.out.println("Inside /specialists");
 		List<SpecialistDetail> specialists = client
 				.getAllSpecialist((String) request.getSession().getAttribute("Authorization"));
@@ -61,13 +60,16 @@ public class IpTreatmentOfferingController {
 		model.addObject("specialists", specialists);
 		return model;
 	}
-
+	*/
+	
 	/**
 	 * @param model
 	 * @param request
 	 * @return
 	 * @throws Exception
 	 */
+	
+	/*
 	@GetMapping(value = "/ipTreatmentPackages")
 	public ModelAndView showIPTreatmentPackages(Model model, HttpServletRequest request) throws Exception {
 		System.out.println("Inside IP Treatment Packages");
@@ -82,13 +84,16 @@ public class IpTreatmentOfferingController {
 		modelAndView.addObject("ipTreatmentPackagekageName", packageDetails);
 		return modelAndView;
 	}
-
+	*/
+	
 	/**
 	 * @param formInputsGetByPackageName
 	 * @param request
 	 * @return
 	 * @throws Exception
 	 */
+	
+	/*
 	@GetMapping(value = "/ipTreatmentPackageByName")
 	public ModelAndView showIPTreatmentPackageByName2(
 			@ModelAttribute("formInputsGetByPackageName") FormInputsGetByPackageName formInputsGetByPackageName,
@@ -98,18 +103,12 @@ public class IpTreatmentOfferingController {
 			ModelAndView login = new ModelAndView("error-page401");
 			return login;
 		}
-		/*
-		 * if token is set, 
-		 * then allow access to view
-		 */
+		//if token is set, then allow access to view
 		ModelAndView model = new ModelAndView("user-package-detail-by-name-page");
 		if (formInputsGetByPackageName != null && formInputsGetByPackageName.getAilment() != null
 				&& formInputsGetByPackageName.getPackageName() != null) {
 			try {
-				/*
-				 * get the package details by Name 
-				 * using feign client of IPOfferingMicroservice
-				 */
+				//get the package details by Name, using feign client of IPOfferingMicroservice
 				IPTreatmentPackage ipTreatmentPackagekageName = client.getIPTreatmentPackageByName(
 						formInputsGetByPackageName.getAilment(),
 						formInputsGetByPackageName.getPackageName(),
@@ -121,6 +120,8 @@ public class IpTreatmentOfferingController {
 		}
 		return model;
 	}
+	*/
+	
 	/**
 	 * 
 	 * @param areaOfExpertise
@@ -128,6 +129,7 @@ public class IpTreatmentOfferingController {
 	 * @return
 	 * @throws Exception
 	 */
+	
 	@GetMapping(value = "/viewSpecialistsByExpertise")
 	public ModelAndView showSpecialistsByExpertise(@ModelAttribute("areaOfExpertise") AreaOfExpertise areaOfExpertise,HttpServletRequest request) throws Exception {
 		
@@ -136,9 +138,8 @@ public class IpTreatmentOfferingController {
 			ModelAndView login = new ModelAndView("error-page401");
 			return login;
 		}
-		/* 
-		 * get the list of specialists By Expertise using feign client of IPOfferingMicroservice
-		 */
+
+		// get the list of specialists By Expertise using feign client of IPOfferingMicroservice
 		System.out.println("Inside /viewSpecialistsByExpertise");
 		ModelAndView model = new ModelAndView("admin-view-specialists-by-expertise");
 		if(areaOfExpertise.getAilment() != null)
@@ -162,6 +163,7 @@ public class IpTreatmentOfferingController {
 	}
 	
 
+	/*
 	@ModelAttribute("ailmentList")
 	public Set<String> populateAilmentEnumList() {
 		return EnumSet.allOf(com.cts.portal.model.AilmentCategory.class).stream().map(a -> a.name())
@@ -174,6 +176,7 @@ public class IpTreatmentOfferingController {
 		return Arrays.asList("Package 1", "Package 2");
 
 	}
+	*/
 	
 	
 	//////////////////////////////////////////////////////////////////////
@@ -221,6 +224,7 @@ public class IpTreatmentOfferingController {
 	}
 		
 	//--------------------------------------------------
+	/*
 	@GetMapping(value = "/addSpecialist")
 	public ModelAndView getAddSpecialist(	// for showing the add specialist form
 			HttpServletRequest request,
@@ -276,6 +280,8 @@ public class IpTreatmentOfferingController {
 					return login;	
 				}
 	}
+	*/
+	
 	
 	//***********************************************
 	//update package get and post mapping
