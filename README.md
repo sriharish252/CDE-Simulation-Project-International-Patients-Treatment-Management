@@ -8,18 +8,17 @@
         <a href="https://github.com/DRoy7">Deep Roy</a>
         </td>
       <td>
-        <a href="https://github.com/sriharish252"><td>Sri Harish</td></a>
+        <a href="https://github.com/sriharish252">Sri Harish</a>
         </td>
       <td>
-        <a href="https://github.com/Kamalesh8"><td>Kamalesh R</td></a>
+        <a href="https://github.com/Kamalesh8">Kamalesh R></a>
         </td>
       <td>
-        <a href="https://github.com/Megha0699"><td>Megha S</td></a>
+        <a href="https://github.com/Megha0699">Megha S</a>
         </td>
       <td>
-        <a href="https://github.com/greninja199"><td>Praduman Kumar</td></a>
+        <a href="https://github.com/greninja199">Praduman Kumar</a>
         </td>
-      <td></td>
     </tr>
 </table>
 
