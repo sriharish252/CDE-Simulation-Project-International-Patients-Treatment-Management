@@ -206,7 +206,7 @@
 
   * ### Portal-Microservice :
     This module is used for simulating the project through the **User Interface**. 
-    This microsevice provides the endpoints for **Login**.
+    This microsevice provides the endpoints for **Login**. This is the UI-Microservice for our Project.
 
   * #### --Endpoints : 
     <table>
