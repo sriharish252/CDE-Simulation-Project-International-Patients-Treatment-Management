@@ -116,32 +116,32 @@ This microsevice provides the endpoints for viewing and modifying the treatment 
         <tr>
             <td>GET</td>
             <td>/ipTreatmentPackages</td>
-            <td>List<IPTreatmentPackage></td>
+            <td>List of "IPTreatmentPackage"</td>
         </tr>
         <tr>
             <td>GET</td>
             <td>/ipTreatmentPackageByName/{ailment}/{packageName}</td>
-            <td>List<IPTreatmentPackage></td>
+            <td>List of "IPTreatmentPackage"></td>
         </tr>
         <tr>
             <td>GET</td>
             <td>/specialists</td>
-            <td>List<SpecialistDetail></td>
+            <td>List of "SpecialistDetail"></td>
         </tr>
         <tr>
             <td>POST</td>
             <td>/addSpecialist</td>
-            <td>ResponseEntity<String></td>
+            <td>ResponseEntity of String type</td>
         </tr>
         <tr>
             <td>DELETE</td>
             <td>/deleteSpecialist/{specialistId}</td>
-            <td>ResponseEntity<String></td>
+            <td>ResponseEntity of String type></td>
         </tr>
         <tr>
             <td>PUT</td>
             <td>/updatePackage/{pid}/{treatmentPackageName}</td>
-            <td>ResponseEntity<String></td>
+            <td>ResponseEntity of String type</td>
         </tr>
         <tr>
             <td>GET</td>
@@ -156,6 +156,7 @@ spring.application.name=IPTreatmentOffering-service<br/>
 server.port=8100<br/>
 server.servlet.context-path=/ipTreatmentOffering<br/>
 User Database : H2(In-Memory)<br/>
+
 
 ### Portal-Microservice :
 This module is used for simulating the project through the **User Interface**. 
@@ -183,6 +184,7 @@ ipoffering.URL=http://localhost:8100/ipTreatmentOffering<br/>
 iptreatment.URL=http://localhost:8200/ipTreatment<br/>
 insure.URL=http://localhost:8300/insure<br/>
 
+
 ### IPTreatment-Microservice :
 This module is used for doing the **Treatment Plan** details of our project. 
 This microsevice provides the endpoints for formulating timetable , getting treatment plans & updating the status.
@@ -203,7 +205,7 @@ This microsevice provides the endpoints for formulating timetable , getting trea
         <tr>
             <td>GET</td>
             <td>/getAllTreatmentPlan</td>
-            <td>"List of TreatmentPlan"</td>
+            <td>List of "TreatmentPlan"</td>
         </tr>
         <tr>
             <td>POST</td>
