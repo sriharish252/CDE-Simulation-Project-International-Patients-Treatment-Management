@@ -157,5 +157,70 @@ server.port=8100<br/>
 server.servlet.context-path=/ipTreatmentOffering<br/>
 User Database : H2(In-Memory)<br/>
 
+### Portal-Microservice :
+This module is used for simulating the project through the **User Interface**. 
+This microsevice provides the endpoints for **Login**.
 
+#### --Endpoints : 
+<table>
+    <thead>
+        <th>Method</th>
+        <th>Endpoint Path</th>
+        <th>Returns</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>GET</td>
+            <td>/login</td>
+            <td>View</td>
+        </tr>
+    </tbody>
+</table>
+
+#### --Application Properties Toggle : <br/>
+auth.URL=http://localhost:8400/auth<br/>
+ipoffering.URL=http://localhost:8100/ipTreatmentOffering<br/>
+iptreatment.URL=http://localhost:8200/ipTreatment<br/>
+insure.URL=http://localhost:8300/insure<br/>
+
+### IPTreatment-Microservice :
+This module is used for doing the **Treatment Plan** details of our project. 
+This microsevice provides the endpoints for formulating timetable , getting treatment plans & updating the status.
+
+#### --Endpoints : 
+<table>
+    <thead>
+        <th>Method</th>
+        <th>Endpoint Path</th>
+        <th>Returns</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>POST</td>
+            <td>/formulateTimetable</td>
+            <td>TreatmentPlan</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/getAllTreatmentPlan</td>
+            <td>"List of TreatmentPlan"</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>/updateTreatmentPlan</td>
+            <td>TreatmentPlan</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/health-check</td>
+            <td>ResponseEntity</td>
+        </tr>
+    </tbody>
+</table>
+
+#### --Application Properties Toggle : <br/>
+spring.application.name=IPTreatment-service<br/>
+server.port=8200<br/>
+server.servlet.context-path=/ipTreatment<br/>
+User Database : H2(In-Memory)<br/>
 
