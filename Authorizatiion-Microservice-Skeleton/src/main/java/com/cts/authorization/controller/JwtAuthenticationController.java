@@ -99,4 +99,23 @@ public class JwtAuthenticationController {
 		return new ResponseEntity<>("auth-Ok", HttpStatus.OK);
 	}
 
+	//---------------------------------------------------------------
+	@PostMapping(value = "/authorize-role")
+	public boolean authorizeTheRequestIfAdmin(
+			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader) {
+		System.out.println("Inside authorize =============="+requestTokenHeader);
+		String jwtToken = null;
+		String userName = null;
+		if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
+			jwtToken = requestTokenHeader.substring(7);
+			System.out.println("JWT Tocken ======================="+jwtToken);
+			try {
+				userName = jwtTokenUtil.getUsernameFromToken(jwtToken);
+			} catch (IllegalArgumentException | ExpiredJwtException e) {
+				return false;
+			}
+		}
+		return userName.equals("admin");
+
+	}
 }
