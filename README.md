@@ -1,4 +1,4 @@
-**# CDE-Simulation-Project-International-Patients-Treatment-Management**
+# CDE-Simulation-Project-International-Patients-Treatment-Management
 
 ## Authors :
 
