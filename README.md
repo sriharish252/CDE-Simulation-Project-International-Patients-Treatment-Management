@@ -57,10 +57,10 @@
   * #### --Dependencies on Other microsevices : **None**
 
   * #### --Application Properties Toggle :<br/>
-    spring.application.name=Authorizatiion-Microservice<br/>
-    server.port=8400<br/>
-    server.servlet.context-path=/auth<br/>
-    User Database : H2(In-Memory)<br/>
+      spring.application.name=Authorizatiion-Microservice<br/>
+      server.port=8400<br/>
+      server.servlet.context-path=/auth<br/>
+      User Database : H2(In-Memory)<br/>
 
 * ### InsuranceClaim-Microservice :
   This module is used for doing the **Insurance Claim** part after the registration of a patient. 
@@ -95,17 +95,17 @@
   * #### --Dependencies on Other microsevices : **Authorization-Microservice**, **IPTreatment-MicroService**
 
   * #### --Application Properties Toggle :<br/>
-    spring.application.name=InsuranceClaim<br/>
-    server.port=8300<br/>
-    server.servlet.context-path=/insure<br/>
-    auth.URL=http://localhost:8400/auth<br/>
-    iptreatment.URL=http://localhost:8200/ipTreatment<br/>
-    User Database : H2(In-Memory)<br/>
+      spring.application.name=InsuranceClaim<br/>
+      server.port=8300<br/>
+      server.servlet.context-path=/insure<br/>
+      auth.URL=http://localhost:8400/auth<br/>
+      iptreatment.URL=http://localhost:8200/ipTreatment<br/>
+      User Database : H2(In-Memory)<br/>
 
 
-  * ### IPTreatmentOffering-Microservice :
-    This module is used for doing the **IPTreatmentOffering services**. 
-    This microsevice provides the endpoints for viewing and modifying the treatment packages and the specialists.
+* ### IPTreatmentOffering-Microservice :
+  This module is used for doing the **IPTreatmentOffering services**. 
+  This microsevice provides the endpoints for viewing and modifying the treatment packages and the specialists.
 
   * #### --Endpoints : 
     <table>
@@ -156,14 +156,14 @@
   * #### --Dependencies on Other microsevices : **Authorization-Microservice**
 
   * #### --Application Properties Toggle : <br/>
-    spring.application.name=IPTreatmentOffering-service<br/>
-    server.port=8100<br/>
-    server.servlet.context-path=/ipTreatmentOffering<br/>
-    User Database : H2(In-Memory)<br/>
+      spring.application.name=IPTreatmentOffering-service<br/>
+      server.port=8100<br/>
+      server.servlet.context-path=/ipTreatmentOffering<br/>
+      User Database : H2(In-Memory)<br/>
 
-  * ### IPTreatment-Microservice :
-    This module is used for doing the **Treatment Plan** details of our project. 
-    This microsevice provides the endpoints for formulating timetable , getting treatment plans & updating the status.
+* ### IPTreatment-Microservice :
+  This module is used for doing the **Treatment Plan** details of our project. 
+  This microsevice provides the endpoints for formulating timetable , getting treatment plans & updating the status.
 
   * #### --Endpoints : 
     <table>
@@ -199,14 +199,14 @@
   * #### --Dependencies on Other microsevices : **Authorization-Microservice**, **IPTreatmentOffering-Microservice**
 
   * #### --Application Properties Toggle : <br/>
-    spring.application.name=IPTreatment-service<br/>
-    server.port=8200<br/>
-    server.servlet.context-path=/ipTreatment<br/>
-    User Database : H2(In-Memory)<br/>
+      spring.application.name=IPTreatment-service<br/>
+      server.port=8200<br/>
+      server.servlet.context-path=/ipTreatment<br/>
+      User Database : H2(In-Memory)<br/>
 
-  * ### Portal-Microservice :
-    This module is used for simulating the project through the **User Interface**. 
-    This microsevice provides the endpoints for **Login**. This is the UI-Microservice for our Project.
+* ### Portal-Microservice :
+  This module is used for simulating the project through the **User Interface**. 
+  This microsevice provides the endpoints for **Login**. This is the UI-Microservice for our Project.
 
   * #### --Endpoints : 
     <table>
@@ -227,10 +227,10 @@
   * #### --Dependencies on Other microsevices : **Authorization-Microservice**, **IPTreatmentOffering-Microservice**, **IPTreatment-MicroService**, **InsuranceClaim-Microservice**
 
   * #### --Application Properties Toggle : <br/>
-    auth.URL=http://localhost:8400/auth<br/>
-    ipoffering.URL=http://localhost:8100/ipTreatmentOffering<br/>
-    iptreatment.URL=http://localhost:8200/ipTreatment<br/>
-    insure.URL=http://localhost:8300/insure<br/>
+      auth.URL=http://localhost:8400/auth<br/>
+      ipoffering.URL=http://localhost:8100/ipTreatmentOffering<br/>
+      iptreatment.URL=http://localhost:8200/ipTreatment<br/>
+      insure.URL=http://localhost:8300/insure<br/>
 
 
 
