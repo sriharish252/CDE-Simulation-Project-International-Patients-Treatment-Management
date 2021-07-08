@@ -1,23 +1,25 @@
-# CDE-Simulation-Project-International-Patients-Treatment-Management
+**# CDE-Simulation-Project-International-Patients-Treatment-Management**
 
-## Authors :
+##Authors :
 
 <table>
   <tr>
-    <a href="https://github.com/DRoy7"><td>Deep Roy</td></a>
-  </tr>
-  <tr>
-    <a href="https://github.com/sriharish252"><td>Sri Harish</td></a>
-  </tr>
-  <tr>
-    <a href="https://github.com/Kamalesh8"><td>Kamalesh R</td></a>
-  </tr>
-  <tr>
-    <a href="https://github.com/Megha0699"><td>Megha S</td></a>
-  </tr>
-  <tr>
-    <a href="https://github.com/greninja199"><td>Praduman Kumar</td></a>
-  </tr>
+      <td>
+        <a href="https://github.com/DRoy7"><td>Deep Roy</td></a>
+        </td>
+      <td>
+        <a href="https://github.com/sriharish252"><td>Sri Harish</td></a>
+        </td>
+      <td>
+        <a href="https://github.com/Kamalesh8"><td>Kamalesh R</td></a>
+        </td>
+      <td>
+        <a href="https://github.com/Megha0699"><td>Megha S</td></a>
+        </td>
+      <td>
+        <a href="https://github.com/greninja199"><td>Praduman Kumar</td></a>
+        </td>
+    </tr>
 </table>
 
 ## Modules::
