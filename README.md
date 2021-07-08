@@ -11,7 +11,7 @@
         <a href="https://github.com/sriharish252">Sri Harish</a>
         </td>
       <td>
-        <a href="https://github.com/Kamalesh8">Kamalesh R></a>
+        <a href="https://github.com/Kamalesh8">Kamalesh R</a>
         </td>
       <td>
         <a href="https://github.com/Megha0699">Megha S</a>
