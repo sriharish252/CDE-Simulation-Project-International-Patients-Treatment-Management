@@ -90,8 +90,7 @@ This microsevice provides the endpoints for getting the Insurance related detail
     </tbody>
 </table>
 
-#### --Dependencies on Other microsevices :<br/>
-**Authorizatiion-Microservice**, **IPTreatment-MicroService**
+#### --Dependencies on Other microsevices : **Authorizatiion-Microservice**, **IPTreatment-MicroService**
 
 #### --Application Properties Toggle :<br/>
 spring.application.name=InsuranceClaim<br/>
