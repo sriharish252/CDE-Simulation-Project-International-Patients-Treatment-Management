@@ -184,8 +184,10 @@ public class IpTreatmentOfferingController {
 	@GetMapping("/deleteSpecialistById")
 	public ModelAndView deleteSpecialist(@ModelAttribute("formInputGetBySpecialistId") 
 			FormInputGetBySpecialistId formInputGetBySpecialistId,HttpServletRequest request) throws Exception {
-		if ((String) request.getSession().getAttribute("Authorization") == null) {
+		String requestToken = (String) request.getSession().getAttribute("Authorization");	
+		if (!authClient.authorizeTheRequestIfAdmin(requestToken)) {
 			ModelAndView login = new ModelAndView("error-page401");
+			login.setStatus(HttpStatus.UNAUTHORIZED);
 			return login;
 		}
 		
@@ -220,26 +222,29 @@ public class IpTreatmentOfferingController {
 		specialists = client
 				.getAllSpecialist((String) request.getSession().getAttribute("Authorization"));
 		model.addObject("specialists", specialists);
+		model.setStatus(HttpStatus.OK);
 		return model;
 	}
 		
 	//--------------------------------------------------
-	/*
 	@GetMapping(value = "/addSpecialist")
 	public ModelAndView getAddSpecialist(	// for showing the add specialist form
 			HttpServletRequest request,
 			@ModelAttribute("specialistDetail") SpecialistDetail specialistDetail
 			) {
 		String requestToken = (String) request.getSession().getAttribute("Authorization");
-		if(request.getSession().getAttribute("userName").equals("admin")) {	// checks if admin or not
+		if(authClient.authorizeTheRequestIfAdmin(requestToken)) {	// checks if admin or not
 			//System.out.println("\n************\n Its admin\n***************\n");
 			ModelAndView mav = new ModelAndView();
 			mav.addObject(specialistDetail);
 			mav.setViewName("specialist-register-page");
+			mav.setStatus(HttpStatus.OK);
 			return mav;
 		}
 		else {
-			return new ModelAndView("error-page401");
+			ModelAndView mav = new ModelAndView("error-page401");
+			mav.setStatus(HttpStatus.UNAUTHORIZED);
+			return mav;
 		}
 	}
 	
@@ -250,7 +255,7 @@ public class IpTreatmentOfferingController {
 			@ModelAttribute("specialistDetail") SpecialistDetail specialistDetail){
 				//System.out.println(specialistDetail);
 				String requestToken = (String) request.getSession().getAttribute("Authorization");
-				if(request.getSession().getAttribute("userName").equals("admin")) {	// checks if admin or not
+				if(authClient.authorizeTheRequestIfAdmin(requestToken)) {	// checks if admin or not
 					//System.out.println("\n************\n Its admin\n***************\n");
 					if (requestToken != null) {
 						// adding the specialist using FeignClient
@@ -270,6 +275,7 @@ public class IpTreatmentOfferingController {
 					}
 					else {
 						ModelAndView login = new ModelAndView("error-page401");
+						login.setStatus(HttpStatus.UNAUTHORIZED);
 						return login;	
 					}
 				}
@@ -280,38 +286,45 @@ public class IpTreatmentOfferingController {
 					return login;	
 				}
 	}
-	*/
-	
 	
 	//***********************************************
 	//update package get and post mapping
 	@GetMapping("/updatePackage") 
 	public ModelAndView viewUpdatePackage(@ModelAttribute("getPackage") GetPackage getPackage, HttpServletRequest request) throws Exception
 	{ 
-		if ((String) request.getSession().getAttribute("Authorization") == null) {
+		String requestToken = (String) request.getSession().getAttribute("Authorization");
+		if(!authClient.authorizeTheRequestIfAdmin(requestToken)) {
 
 			ModelAndView login = new ModelAndView("error-page401");
+			login.setStatus(HttpStatus.UNAUTHORIZED);
 			return login; 
 		}       
 		ModelAndView model = new ModelAndView("update-package"); 
 		model.addObject("getPackage",getPackage);
+		model.setStatus(HttpStatus.OK);
 		return model;       
 	} 
 	
 	@PostMapping("/updatePackage") 
-	public String updatePackage(@ModelAttribute("getPackage") GetPackage getPackage, Model model, HttpServletRequest request) throws Exception
+	public ModelAndView updatePackage(@ModelAttribute("getPackage") GetPackage getPackage, Model model, HttpServletRequest request) throws Exception
 	{ 
-		if ((String) request.getSession().getAttribute("Authorization") == null) {
-			return "error-page401"; 
+		String requestToken = (String) request.getSession().getAttribute("Authorization");
+		if(authClient.authorizeTheRequestIfAdmin(requestToken)) {
+			ModelAndView modelAndView = new ModelAndView("error-page401");
+			modelAndView.setStatus(HttpStatus.UNAUTHORIZED);
+			return modelAndView; 
 		}       
+		ResponseEntity<String> entity = null;
 		if(getPackage.getPid()!=0)
 		{ 
 			System.out.println("Inside update");
-	 		ResponseEntity<String> entity=client.updatePackage((String) request.getSession().getAttribute("Authorization"),
-	 				getPackage.getPid(), getPackage.getTreatmentPackageName());
+	 		entity=client.updatePackage(requestToken, getPackage.getPid(), getPackage.getTreatmentPackageName());
 		} 
-		model.addAttribute("getPackage", getPackage);
-		return "update-package";       
+		ModelAndView modelAndView = new ModelAndView("update-package");
+		modelAndView.addObject("getPackage", getPackage);
+		modelAndView.addObject("message", "Updated package successfully!!");
+		modelAndView.setStatus(entity.getStatusCode());
+		return modelAndView;       
 	} 
 	
 }
