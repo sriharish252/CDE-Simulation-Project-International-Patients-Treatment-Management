@@ -1,6 +1,6 @@
 # CDE-Simulation-Project-International-Patients-Treatment-Management
 
-##Authors :
+## Authors :
 
 <table>
   <tr>
@@ -51,4 +51,8 @@ This microsevice provides the endpoints for authentication and authorization
         </tr>
     </tbody>
 </table>
-
+#### --Application Properties Toggle :
+spring.application.name=Authorizatiion-Microservice
+server.port=8400
+server.servlet.context-path=/auth
+User Database : H2(In-Memory)
