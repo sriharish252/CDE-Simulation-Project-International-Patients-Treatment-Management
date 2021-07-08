@@ -24,7 +24,7 @@
 
 ## Modules::
 
-### Authorization-Microservice :
+### Authorizatiion-Microservice :
 This module is used for doing the **Authentication** and **Authorization** part of our project. 
 This microsevice provides the endpoints for authentication and authorization
 
@@ -54,8 +54,49 @@ This microsevice provides the endpoints for authentication and authorization
     </tbody>
 </table>
 
-#### --Application Properties Toggle : <br/>
+#### --Application Properties Toggle :<br/>
 spring.application.name=Authorizatiion-Microservice<br/>
 server.port=8400<br/>
 server.servlet.context-path=/auth<br/>
+User Database : H2(In-Memory)<br/>
+
+### InsuranceClaim-Microservice :
+This module is used for doing the **Insurance Claim** part after the registration of a patient. 
+This microsevice provides the endpoints for getting the Insurance related details and storing insurer details.
+
+#### --Endpoints : 
+<table>
+    <thead>
+        <th>Method</th>
+        <th>Endpoint Path</th>
+        <th>Returns</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>GET</td>
+            <td>/getAllInsurerDetail</td>
+            <td>List of "InsurerDetail"</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/getInsurerByPackageName/{packageName}</td>
+            <td>"InsurerDetail"</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>/initiateClaim</td>
+            <td>double</td>
+        </tr>
+    </tbody>
+</table>
+
+#### --Dependencies on Other microsevices :<br/>
+**Authorizatiion-Microservice**, **IPTreatment-MicroService**
+
+#### --Application Properties Toggle :<br/>
+spring.application.name=InsuranceClaim<br/>
+server.port=8300<br/>
+server.servlet.context-path=/insure<br/>
+auth.URL=http://localhost:8400/auth<br/>
+iptreatment.URL=http://localhost:8200/ipTreatment<br/>
 User Database : H2(In-Memory)<br/>
