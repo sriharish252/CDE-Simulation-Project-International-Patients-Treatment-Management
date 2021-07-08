@@ -24,41 +24,43 @@
 
 ## Modules::
 
-### Authorizatiion-Microservice :
+* ### Authorizatiion-Microservice :
 This module is used for doing the **Authentication** and **Authorization** part of our project. 
 This microsevice provides the endpoints for authentication and authorization
 
-#### --Endpoints : 
-<table>
-    <thead>
-        <th>Method</th>
-        <th>Endpoint Path</th>
-        <th>Returns</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>POST</td>
-            <td>/authenticate</td>
-            <td>ResponseEntity</td>
-        </tr>
-        <tr>
-            <td>POST</td>
-            <td>/authorize</td>
-            <td>boolean</td>
-        </tr>
-        <tr>
-            <td>POST</td>
-            <td>/authorize-role</td>
-            <td>boolean</td>
-        </tr>
-    </tbody>
-</table>
+  * #### --Endpoints : 
+    <table>
+        <thead>
+            <th>Method</th>
+            <th>Endpoint Path</th>
+            <th>Returns</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>POST</td>
+                <td>/authenticate</td>
+                <td>ResponseEntity</td>
+            </tr>
+            <tr>
+                <td>POST</td>
+                <td>/authorize</td>
+                <td>boolean</td>
+            </tr>
+            <tr>
+                <td>POST</td>
+                <td>/authorize-role</td>
+                <td>boolean</td>
+            </tr>
+        </tbody>
+    </table>
 
-#### --Application Properties Toggle :<br/>
-spring.application.name=Authorizatiion-Microservice<br/>
-server.port=8400<br/>
-server.servlet.context-path=/auth<br/>
-User Database : H2(In-Memory)<br/>
+  * #### --Dependencies on Other microsevices : **None**
+
+  * #### --Application Properties Toggle :<br/>
+    spring.application.name=Authorizatiion-Microservice<br/>
+    server.port=8400<br/>
+    server.servlet.context-path=/auth<br/>
+    User Database : H2(In-Memory)<br/>
 
 ### InsuranceClaim-Microservice :
 This module is used for doing the **Insurance Claim** part after the registration of a patient. 
@@ -121,12 +123,12 @@ This microsevice provides the endpoints for viewing and modifying the treatment 
         <tr>
             <td>GET</td>
             <td>/ipTreatmentPackageByName/{ailment}/{packageName}</td>
-            <td>List of "IPTreatmentPackage"</td>
+            <td>List of "IPTreatmentPackage"></td>
         </tr>
         <tr>
             <td>GET</td>
             <td>/specialists</td>
-            <td>List of "SpecialistDetail"</td>
+            <td>List of "SpecialistDetail"></td>
         </tr>
         <tr>
             <td>POST</td>
@@ -136,7 +138,7 @@ This microsevice provides the endpoints for viewing and modifying the treatment 
         <tr>
             <td>DELETE</td>
             <td>/deleteSpecialist/{specialistId}</td>
-            <td>ResponseEntity of String type</td>
+            <td>ResponseEntity of String type></td>
         </tr>
         <tr>
             <td>PUT</td>
@@ -156,34 +158,6 @@ spring.application.name=IPTreatmentOffering-service<br/>
 server.port=8100<br/>
 server.servlet.context-path=/ipTreatmentOffering<br/>
 User Database : H2(In-Memory)<br/>
-
-
-### Portal-Microservice :
-This module is used for simulating the project through the **User Interface**. 
-This microsevice provides the endpoints for **Login**.
-
-#### --Endpoints : 
-<table>
-    <thead>
-        <th>Method</th>
-        <th>Endpoint Path</th>
-        <th>Returns</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>GET</td>
-            <td>/login</td>
-            <td>View</td>
-        </tr>
-    </tbody>
-</table>
-
-#### --Application Properties Toggle : <br/>
-auth.URL=http://localhost:8400/auth<br/>
-ipoffering.URL=http://localhost:8100/ipTreatmentOffering<br/>
-iptreatment.URL=http://localhost:8200/ipTreatment<br/>
-insure.URL=http://localhost:8300/insure<br/>
-
 
 ### IPTreatment-Microservice :
 This module is used for doing the **Treatment Plan** details of our project. 
@@ -225,4 +199,33 @@ spring.application.name=IPTreatment-service<br/>
 server.port=8200<br/>
 server.servlet.context-path=/ipTreatment<br/>
 User Database : H2(In-Memory)<br/>
+
+### Portal-Microservice :
+This module is used for simulating the project through the **User Interface**. 
+This microsevice provides the endpoints for **Login**.
+
+#### --Endpoints : 
+<table>
+    <thead>
+        <th>Method</th>
+        <th>Endpoint Path</th>
+        <th>Returns</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>GET</td>
+            <td>/login</td>
+            <td>View</td>
+        </tr>
+    </tbody>
+</table>
+
+#### --Application Properties Toggle : <br/>
+auth.URL=http://localhost:8400/auth<br/>
+ipoffering.URL=http://localhost:8100/ipTreatmentOffering<br/>
+iptreatment.URL=http://localhost:8200/ipTreatment<br/>
+insure.URL=http://localhost:8300/insure<br/>
+
+
+
 
