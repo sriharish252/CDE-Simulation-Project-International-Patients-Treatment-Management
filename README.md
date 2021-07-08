@@ -5,7 +5,7 @@
 <table>
   <tr>
       <td>
-        <a href="https://github.com/DRoy7"><td>Deep Roy</td></a>
+        <a href="https://github.com/DRoy7">Deep Roy</a>
         </td>
       <td>
         <a href="https://github.com/sriharish252"><td>Sri Harish</td></a>
