@@ -24,7 +24,7 @@
 
 ## Modules::
 
-### Authorizatiion-Microservice :
+### Authorization-Microservice :
 This module is used for doing the **Authentication** and **Authorization** part of our project. 
 This microsevice provides the endpoints for authentication and authorization
 
@@ -53,7 +53,8 @@ This microsevice provides the endpoints for authentication and authorization
         </tr>
     </tbody>
 </table>
-#### --Application Properties Toggle :
+
+#### --Application Properties Toggle : <br/>
 spring.application.name=Authorizatiion-Microservice<br/>
 server.port=8400<br/>
 server.servlet.context-path=/auth<br/>
