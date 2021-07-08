@@ -24,7 +24,7 @@
 
 ## Modules::
 
-### Authorizatiion-Microservice :
+### Authorization-Microservice :
 This module is used for doing the **Authentication** and **Authorization** part of our project. 
 This microsevice provides the endpoints for authentication and authorization
 
@@ -90,7 +90,7 @@ This microsevice provides the endpoints for getting the Insurance related detail
     </tbody>
 </table>
 
-#### --Dependencies on Other microsevices : **Authorizatiion-Microservice**, **IPTreatment-MicroService**
+#### --Dependencies on Other microsevices : **Authorization-Microservice**, **IPTreatment-MicroService**
 
 #### --Application Properties Toggle :<br/>
 spring.application.name=InsuranceClaim<br/>
