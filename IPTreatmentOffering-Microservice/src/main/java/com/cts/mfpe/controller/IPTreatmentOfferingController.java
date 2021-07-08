@@ -62,9 +62,25 @@ public class IPTreatmentOfferingController {
 	 * @throws IPTreatmentPackageNotFoundException
 	 * @throws Exception
 	 */
-	@GetMapping("/ipTreatmentPackageByName/{ailment}/{packageName}")
+	@GetMapping("/ipTreatmentPackageByNameOnlyOne/{ailment}/{packageName}")
 	@ApiOperation(notes = "Returns the IP Treatment Package based on package name", value = "Find IP Treatment Package by name")
-	public IPTreatmentPackage getIPTreatmentPackageByName(
+	public IPTreatmentPackage getIPTreatmentPackageByNameOnlyOne (
+			@ApiParam(name = "ailment", value = "ailment of the package") @PathVariable AilmentCategory ailment,
+			@ApiParam(name = "packageName", value = "name of the package") @PathVariable String packageName,
+			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader)
+			throws AuthorizationException, IPTreatmentPackageNotFoundException {
+
+		if (authorisingClient.authorizeTheRequest(requestTokenHeader)) {
+			return ipOfferingService.findIPTreatmentPackageByNameOnlyOne(ailment, packageName);
+		} else {
+			throw new AuthorizationException("Not allowed");
+		}
+	}
+	
+	
+	@GetMapping("/ipTreatmentPackageByName/{ailment}/{packageName}")
+	@ApiOperation(notes = "Returns the IP Treatment Packages based on package names", value = "Find IP Treatment Package by name")
+	public List<IPTreatmentPackage> getIPTreatmentPackageByName(
 			@ApiParam(name = "ailment", value = "ailment of the package") @PathVariable AilmentCategory ailment,
 			@ApiParam(name = "packageName", value = "name of the package") @PathVariable String packageName,
 			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader)
@@ -202,5 +218,13 @@ public class IPTreatmentOfferingController {
 			return response;
 		}
 	}
+	
+	
+	@GetMapping("/countPid/{pid}")
+	public boolean countPid(@PathVariable int pid) {
+		System.out.println(pid);
+		return ipOfferingService.countById(pid);
+	}
+	
 	
 }

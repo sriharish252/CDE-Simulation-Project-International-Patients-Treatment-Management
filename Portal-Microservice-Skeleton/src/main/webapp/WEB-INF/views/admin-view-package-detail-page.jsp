@@ -59,10 +59,11 @@
 						</thead>
 
 						<tbody>
-							<c:forEach items="${ipTreatmentPackagekageName}" var="p"
+							<c:forEach items="${ipTreatmentPackageName}" var="p"
 								varStatus="loop">
 								<tr>
-									<td>${loop.index+1}</td>
+									<!-- <td>${loop.index+1}</td>  -->
+									<td>${p.getPackageDetail().getPid()}</td>
 									<td>${p.getAilmentCategory()}</td>
 									<td>${p.getPackageDetail().getTreatmentPackageName()}</td>
 									<td>${p.getPackageDetail().getTestDetails()}</td>

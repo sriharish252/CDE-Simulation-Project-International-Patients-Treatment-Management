@@ -79,8 +79,8 @@ class PatientDetailsServiceTest {
 		SpecialistDetail detail = new SpecialistDetail(1, "Dr. Riya", AilmentCategory.ORTHOPAIDICS, 4, 11111111);
 		when(treatmentPlanRepo.findAll()).thenReturn(Arrays.asList(treatmentPlan1));
 		when(client.getAllIPTreatmentPackage("token")).thenReturn(java.util.Arrays.asList(pack1, pack2));
-		when(client.getIPTreatmentPackageByName(AilmentCategory.ORTHOPAIDICS, "Package 1", "token")).thenReturn(pack1);
-		when(client.getIPTreatmentPackageByName(AilmentCategory.ORTHOPAIDICS, "Package 2", "token")).thenReturn(pack2);
+		when(client.getIPTreatmentPackageByNameOnlyOne(AilmentCategory.ORTHOPAIDICS, "Package 1", "token")).thenReturn(pack1);
+		when(client.getIPTreatmentPackageByNameOnlyOne(AilmentCategory.ORTHOPAIDICS, "Package 2", "token")).thenReturn(pack2);
 		when(client.getAllSpecialist("token")).thenReturn(Arrays.asList(detail));
 		assertThat(service.saveTreatmentPlan("token", patientDetails2)).isNull();
 	}
@@ -163,7 +163,7 @@ class PatientDetailsServiceTest {
 		PackageDetail package1 = new PackageDetail(101, "Package 1", Arrays.asList("OPT1", "OPT2"), 2500, 4);
 		IPTreatmentPackage pack1 = new IPTreatmentPackage(1, AilmentCategory.ORTHOPAIDICS, package1);
 		SpecialistDetail detail = new SpecialistDetail(1, "Dr. Riya", AilmentCategory.ORTHOPAIDICS, 4, 11111111);
-		when(client.getIPTreatmentPackageByName(AilmentCategory.ORTHOPAIDICS, "Package 1", "token")).thenReturn(pack1);
+		when(client.getIPTreatmentPackageByNameOnlyOne(AilmentCategory.ORTHOPAIDICS, "Package 1", "token")).thenReturn(pack1);
 		assertThat(service.getPackageByName("token", AilmentCategory.ORTHOPAIDICS, "Package 1")).isNotNull();
 	}
 }

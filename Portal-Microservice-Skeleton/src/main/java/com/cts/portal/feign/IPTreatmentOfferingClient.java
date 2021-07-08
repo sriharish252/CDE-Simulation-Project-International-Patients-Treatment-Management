@@ -27,7 +27,7 @@ public interface IPTreatmentOfferingClient {
 	public List<IPTreatmentPackage> getAllIPTreatmentPackage(@RequestHeader(value = "Authorization", required = true) String requestTokenHeader) throws AuthorizationException;
 	
 	@GetMapping("/ipTreatmentPackageByName/{ailment}/{packageName}")
-	public IPTreatmentPackage getIPTreatmentPackageByName(
+	public List<IPTreatmentPackage> getIPTreatmentPackageByName(
 			@ApiParam(name = "ailment", value = "ailment of the package") @PathVariable AilmentCategory ailment,
 			@ApiParam(name = "packageName", value = "name of the package") @PathVariable String packageName,
 			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader)
@@ -54,4 +54,10 @@ public interface IPTreatmentOfferingClient {
 	@PutMapping("/updatePackage/{pid}/{treatmentPackageName}")
 	public ResponseEntity<String> updatePackage(
 			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader, @PathVariable int pid, @PathVariable String treatmentPackageName) throws AuthorizationException;
+	
+	
+	@GetMapping("/countPid/{pid}")
+	public boolean countPid(@PathVariable int pid);
+	
+	
 }

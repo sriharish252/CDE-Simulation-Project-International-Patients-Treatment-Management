@@ -33,11 +33,11 @@
 	<div class="main-container-register">
 		<%@ include file="fragments/header.jsp"%>
 		<div class="section grid">
-			<%@ include file="user-fragments/side-navbar.jsp"%>
+			<%@ include file="admin-fragments/admin-sidebar.jsp"%>
 			<div class="content list-container">
 				<h1>Our In-patient Services</h1>
 				<div class="container">
-					<form:form action="/portal/user/treatmentRegister" method="GET"
+					<form:form action="/portal/treatmentRegister" method="GET"
 						modelAttribute="patientDetails">
 						<div class="form-group">
 							<form:label path="name">Your Name:</form:label>

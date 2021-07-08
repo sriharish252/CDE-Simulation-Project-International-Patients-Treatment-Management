@@ -60,13 +60,13 @@
 						<div class="form-group">
 							<form:label path="experienceInYears">Experience in years:</form:label>
 							<form:input path="experienceInYears" name="experienceInYears" class="form-control" id="experienceInYears"
-								type="number" required="required" />
+								type="number" min="0" max="150" required="required" />
 							<form:errors path="experienceInYears" cssStyle="color:red"></form:errors>
 						</div>
 						<div class="form-group">
 							<form:label path="contactNumber">Contact Number:</form:label>
 							<form:input path="contactNumber" name="contactNumber" class="form-control" id="contactNumber"
-								type="number" pattern="/(7|8|9)\d{9}/" required="required" />
+								type="tel" pattern="[789][0-9]{9}" required="required" />
 							<form:errors path="contactNumber" cssStyle="color:red"></form:errors>
 						</div>
 						<form:button class="btn">Add / Update Specialist</form:button>

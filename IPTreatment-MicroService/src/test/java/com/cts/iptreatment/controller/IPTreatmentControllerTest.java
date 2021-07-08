@@ -81,7 +81,7 @@ class IPTreatmentControllerTest {
 		list.add(new SpecialistDetail(2, "Dr. John", AilmentCategory.ORTHOPAIDICS, 0, 11111111));
 		when(authorizationClient.authorizeTheRequest("@uthoriz@tionToken123")).thenReturn(true);
 		when(ipTreatmentOfferingClient.getAllSpecialist("@uthoriz@tionToken123")).thenReturn(list);
-		when(ipTreatmentOfferingClient.getIPTreatmentPackageByName(AilmentCategory.ORTHOPAIDICS, "Package 1","@uthoriz@tionToken123")).thenReturn(pack1);
+		when(ipTreatmentOfferingClient.getIPTreatmentPackageByNameOnlyOne(AilmentCategory.ORTHOPAIDICS, "Package 1","@uthoriz@tionToken123")).thenReturn(pack1);
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.registerModule(new JavaTimeModule());
 		mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
@@ -104,7 +104,7 @@ class IPTreatmentControllerTest {
 		list.add(new SpecialistDetail(2, "Dr. John", AilmentCategory.ORTHOPAIDICS, 0, 11111111));
 		when(authorizationClient.authorizeTheRequest("@uthoriz@tionToken123")).thenReturn(true);
 		when(ipTreatmentOfferingClient.getAllSpecialist("@uthoriz@tionToken123")).thenReturn(list);
-		when(ipTreatmentOfferingClient.getIPTreatmentPackageByName(AilmentCategory.ORTHOPAIDICS, "Package 1","@uthoriz@tionToken123")).thenReturn(pack1);
+		when(ipTreatmentOfferingClient.getIPTreatmentPackageByNameOnlyOne(AilmentCategory.ORTHOPAIDICS, "Package 1","@uthoriz@tionToken123")).thenReturn(pack1);
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.registerModule(new JavaTimeModule());
 		mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
@@ -127,7 +127,7 @@ class IPTreatmentControllerTest {
 		list.add(new SpecialistDetail(2, "Dr. John", AilmentCategory.ORTHOPAIDICS, 0, 11111111));
 		when(authorizationClient.authorizeTheRequest("@uthoriz@tionToken123")).thenReturn(true);
 		when(ipTreatmentOfferingClient.getAllSpecialist("@uthoriz@tionToken123")).thenReturn(list);
-		when(ipTreatmentOfferingClient.getIPTreatmentPackageByName(AilmentCategory.ORTHOPAIDICS, "Package 1","@uthoriz@tionToken123")).thenReturn(pack1);
+		when(ipTreatmentOfferingClient.getIPTreatmentPackageByNameOnlyOne(AilmentCategory.ORTHOPAIDICS, "Package 1","@uthoriz@tionToken123")).thenReturn(pack1);
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.registerModule(new JavaTimeModule());
 		mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
@@ -150,7 +150,7 @@ class IPTreatmentControllerTest {
 		list.add(new SpecialistDetail(2, "Dr. John", AilmentCategory.ORTHOPAIDICS, 0, 11111111));
 		when(authorizationClient.authorizeTheRequest("@uthoriz@tionToken123")).thenReturn(true);
 		when(ipTreatmentOfferingClient.getAllSpecialist("@uthoriz@tionToken123")).thenReturn(list);
-		when(ipTreatmentOfferingClient.getIPTreatmentPackageByName(AilmentCategory.ORTHOPAIDICS, "Package 1","@uthoriz@tionToken123")).thenReturn(pack1);
+		when(ipTreatmentOfferingClient.getIPTreatmentPackageByNameOnlyOne(AilmentCategory.ORTHOPAIDICS, "Package 1","@uthoriz@tionToken123")).thenReturn(pack1);
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.registerModule(new JavaTimeModule());
 		mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);

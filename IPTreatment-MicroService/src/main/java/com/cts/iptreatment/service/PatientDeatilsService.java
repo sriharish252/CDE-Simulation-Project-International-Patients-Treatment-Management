@@ -29,10 +29,12 @@ public class PatientDeatilsService {
 	private IPTreatmentOfferingClient ipTreatmentOfferingClient;
 	@Autowired
 	private TreatmentPlanRepository treatment;
+	
 	//To save the patient details who registered
 	public PatientDetails savePatientDetails(PatientDetails patientDetials) {
 		return patientRepo.save(patientDetials);
 	}
+	
 	//To save the treatment plan of a patient
 	public TreatmentPlan saveTreatmentPlan(String token, PatientDetails patientDetials) throws Exception {
 		if(checkIfPatientAlreadyRegistered(patientDetials.getName())) {
@@ -52,10 +54,10 @@ public class PatientDeatilsService {
 		log.info("TreatmentPlan Detail "+treatmentPlan);
 		return treatment.save(treatmentPlan);
 	}
-
+	
 	public IPTreatmentPackage getPackageByName(String token, AilmentCategory ailment, String packageName)
 			throws Exception {
-		return ipTreatmentOfferingClient.getIPTreatmentPackageByName(ailment, packageName, token);
+		return ipTreatmentOfferingClient.getIPTreatmentPackageByNameOnlyOne(ailment, packageName, token);
 	}
 
 	public LocalDate calculateEndDate(LocalDate today, int week) {

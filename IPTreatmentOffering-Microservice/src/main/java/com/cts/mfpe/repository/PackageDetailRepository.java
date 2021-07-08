@@ -12,6 +12,12 @@ import com.cts.mfpe.model.PackageDetail;
 public interface PackageDetailRepository extends JpaRepository<PackageDetail, Integer> {
         //**********
         @Modifying
-	      @Query("update PackageDetail SET treatmentPackageName=:treatmentPackageName WHERE pid=:pid")
-	      void updateById(@Param("pid") int pid, @Param("treatmentPackageName") String treatmentPackageName);
+	    @Query("update PackageDetail SET treatmentPackageName=:treatmentPackageName WHERE pid=:pid")
+	    void updateById(@Param("pid") int pid, @Param("treatmentPackageName") String treatmentPackageName);
+        
+        /*
+	    @Query("select count(pid) from packages where pid=:pid")
+	    int countByIdFromDb(@Param("pid") int pid);
+	    */
+	    
 }

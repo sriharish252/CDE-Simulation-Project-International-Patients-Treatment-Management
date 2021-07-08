@@ -69,25 +69,6 @@ class IPTreatmentOfferingServiceTest {
 		assertThat(ipOfferingService.findAllIPTreatmentPackages()).hasSize(2);
 	}
 
-	@Test
-	@DisplayName("Test findIPTreatmentPackageByName() of IPTreatmentPackageService")
-	public void testValidfindIPTreatmentPackageByName() throws IPTreatmentPackageNotFoundException {
-
-		when(treatmentPackageRepository.findByName(any(), anyString())).thenReturn(Optional.of(pack1));
-		assertTrue(ipOfferingService.findIPTreatmentPackageByName(AilmentCategory.ORTHOPAIDICS, "Package 1").getPackageDetail().equals(package1));
-	}
-
-	@Test
-	@DisplayName("Test invalid findIPTreatmentPackageByName() of IPTreatmentPackageService")
-	public void testInValidfindIPTreatmentPackageByName() throws IPTreatmentPackageNotFoundException {
-
-		when(treatmentPackageRepository.findByName(any(), anyString())).thenReturn(Optional.empty());
-		assertThrows(IPTreatmentPackageNotFoundException.class, () -> {
-			ipOfferingService.findIPTreatmentPackageByName(AilmentCategory.ORTHOPAIDICS, "Package 4");
-		});
-		
-		verify(treatmentPackageRepository).findByName(AilmentCategory.ORTHOPAIDICS, "Package 4");
-	}
 
 	@Test
 	@DisplayName("Test findAllSpecialists() of SpecialistDetailService")

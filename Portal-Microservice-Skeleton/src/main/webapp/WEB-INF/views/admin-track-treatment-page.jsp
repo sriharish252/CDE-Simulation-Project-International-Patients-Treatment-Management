@@ -33,7 +33,7 @@
 	<div class="main-container-register">
 		<%@ include file="fragments/header.jsp"%>
 		<div class="section grid">
-			<%@ include file="user-fragments/side-navbar.jsp"%>
+			<%@ include file="admin-fragments/admin-sidebar.jsp"%>
 			<div class="content list-container">
 				<h1>Treatment Plan</h1>
 				<div class="container">

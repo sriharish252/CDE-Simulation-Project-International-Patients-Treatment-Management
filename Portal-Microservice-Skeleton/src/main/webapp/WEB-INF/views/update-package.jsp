@@ -55,7 +55,7 @@
 						<div class="form-group">
 							<form:label path="pid">Package Id:</form:label>
 							<form:input path="pid" class="form-control"
-								id="pid" type="number" required="required" />
+								id="pid" type="number" value="101" required="required" />
 						</div>
 						<div class="form-group">
 							<form:label path="treatmentPackageName">Select Package Name:</form:label>

@@ -24,9 +24,14 @@ import com.cts.portal.exception.AuthorizationException;
 import com.cts.portal.exception.IPTreatmentPackageNotFoundException;
 import com.cts.portal.feign.AuthorisingClient;
 import com.cts.portal.feign.IPTreatmentOfferingClient;
+import com.cts.portal.model.AreaOfExpertise;
+import com.cts.portal.model.FormInputGetBySpecialistId;
 import com.cts.portal.model.FormInputsGetByPackageName;
+import com.cts.portal.model.GetPackage;
 import com.cts.portal.model.IPTreatmentPackage;
 import com.cts.portal.model.SpecialistDetail;
+
+import feign.FeignException;
 
 @Controller
 @RequestMapping("/portal")
@@ -79,7 +84,7 @@ public class IpTreatmentOfferingControllerAdmin {	// this controller is for Admi
 		List<IPTreatmentPackage> packageDetails = client
 				.getAllIPTreatmentPackage((String) request.getSession().getAttribute("Authorization"));
 		ModelAndView modelAndView = new ModelAndView("admin-view-package-detail-page");
-		modelAndView.addObject("ipTreatmentPackagekageName", packageDetails);
+		modelAndView.addObject("ipTreatmentPackageName", packageDetails);
 		return modelAndView;
 	}
 
@@ -98,30 +103,26 @@ public class IpTreatmentOfferingControllerAdmin {	// this controller is for Admi
 			ModelAndView login = new ModelAndView("error-page401");
 			return login;
 		}
-		/*
-		 * if token is set, 
-		 * then allow access to view
-		 */
+		//if token is set, then allow access to view
 		ModelAndView model = new ModelAndView("admin-package-detail-by-name-page");
 		if (formInputsGetByPackageName != null && formInputsGetByPackageName.getAilment() != null
 				&& formInputsGetByPackageName.getPackageName() != null) {
 			try {
-				/*
-				 * get the package details by Name 
-				 * using feign client of IPOfferingMicroservice
-				 */
-				IPTreatmentPackage ipTreatmentPackagekageName = client.getIPTreatmentPackageByName(
+				//get the package details by Name, using feign client of IPOfferingMicroservice
+				List<IPTreatmentPackage> ipTreatmentPackageNames = client.getIPTreatmentPackageByName(
 						formInputsGetByPackageName.getAilment(),
 						formInputsGetByPackageName.getPackageName(),
 						(String) request.getSession().getAttribute("Authorization"));
-				model.addObject("ipTreatmentPackagekageName", ipTreatmentPackagekageName);
+				System.out.println(ipTreatmentPackageNames);
+				model.addObject("ipTreatmentPackageNames", ipTreatmentPackageNames);
 			} catch (IPTreatmentPackageNotFoundException e) {
-				model.addObject("error", e.getMessage());
+				model.addObject("error", "Not Found");
 			}
 		}
 		return model;
 	}
-
+	
+	
 	@ModelAttribute("ailmentList")
 	public Set<String> populateAilmentEnumList() {
 		return EnumSet.allOf(com.cts.portal.model.AilmentCategory.class).stream().map(a -> a.name())
@@ -195,9 +196,113 @@ public class IpTreatmentOfferingControllerAdmin {	// this controller is for Admi
 	}
 	
 	
+	@GetMapping(value = "/viewSpecialistsByExpertise")
+	public ModelAndView showSpecialistsByExpertise(@ModelAttribute("areaOfExpertise") AreaOfExpertise areaOfExpertise,HttpServletRequest request) throws Exception {
+		if ((String) request.getSession().getAttribute("Authorization") == null) {
+			ModelAndView login = new ModelAndView("error-page401");
+			return login;
+		}
+		// get the list of specialists By Expertise using feign client of IPOfferingMicroservice
+		System.out.println("Inside /viewSpecialistsByExpertise");
+		ModelAndView model = new ModelAndView("admin-view-specialists-by-expertise");
+		if(areaOfExpertise.getAilment() != null)
+		{
+			try {
+				// get the specialist by expertise, using feign client of IPOfferingMicroservice 
+				List<SpecialistDetail> specialists = client.getAllSpecialistsByExpertise(
+						(String) request.getSession().getAttribute("Authorization"),
+						areaOfExpertise.getAilment());
+				model.addObject("specialists", specialists);
+			} catch (FeignException e) {
+				model.addObject("error","Connection exception. Try Again!");
+			} 
+		}
+		return model; 
+	}
 	
 	
+	@GetMapping("/deleteSpecialistById")
+	public ModelAndView deleteSpecialist(@ModelAttribute("formInputGetBySpecialistId") 
+			FormInputGetBySpecialistId formInputGetBySpecialistId,HttpServletRequest request) throws Exception {
+		String requestToken = (String) request.getSession().getAttribute("Authorization");	
+		if (!authClient.authorizeTheRequestIfAdmin(requestToken)) {
+			ModelAndView login = new ModelAndView("error-page401");
+			login.setStatus(HttpStatus.UNAUTHORIZED);
+			return login;
+		}
+		ModelAndView model = new ModelAndView("delete-specialist-by-id");
+		List<SpecialistDetail> specialists = client
+				.getAllSpecialist((String) request.getSession().getAttribute("Authorization"));
+		boolean available = false;
+		for (SpecialistDetail specialistDetail : specialists) {
+			if(specialistDetail.getSpecialistId() == formInputGetBySpecialistId.getSpecialistId()) {
+				available = true;
+				break;
+			}
+		}
+		if(available == false && formInputGetBySpecialistId.getSpecialistId() != 0) {
+				model.addObject("message", "Cannot delete, ID not available");
+			return model;
+		}
+		if(formInputGetBySpecialistId.getSpecialistId()!=0)
+		{ 
+	 		ResponseEntity<String> entity=client.deleteSpecialist((String) request.getSession().getAttribute("Authorization"),
+					formInputGetBySpecialistId.getSpecialistId());
+	 		if(entity.getStatusCodeValue() == 200)
+	 			model.addObject("message", "Deleted Successfully");
+		}
+		specialists = client
+				.getAllSpecialist((String) request.getSession().getAttribute("Authorization"));
+		model.addObject("specialists", specialists);
+		model.setStatus(HttpStatus.OK);
+		return model;
+	}
 	
+	
+	@GetMapping("/updatePackage") 
+	public ModelAndView viewUpdatePackage(@ModelAttribute("getPackage") GetPackage getPackage, HttpServletRequest request) throws Exception
+	{ 
+		String requestToken = (String) request.getSession().getAttribute("Authorization");
+		if(!authClient.authorizeTheRequestIfAdmin(requestToken)) {
+
+			ModelAndView login = new ModelAndView("error-page401");
+			login.setStatus(HttpStatus.UNAUTHORIZED);
+			return login;
+		}
+		ModelAndView model = new ModelAndView("update-package"); 
+		model.addObject("getPackage",getPackage);
+		model.setStatus(HttpStatus.OK);
+		return model;       
+	} 
+	
+	@PostMapping("/updatePackage") 
+	public ModelAndView updatePackage(@ModelAttribute("getPackage") GetPackage getPackage, Model model, HttpServletRequest request) throws Exception
+	{ 
+		String requestToken = (String) request.getSession().getAttribute("Authorization");
+		if(!authClient.authorizeTheRequestIfAdmin(requestToken)) {
+			ModelAndView modelAndView = new ModelAndView("error-page401");
+			modelAndView.setStatus(HttpStatus.UNAUTHORIZED);
+			return modelAndView; 
+		}       
+		ResponseEntity<String> entity = null;
+		ModelAndView modelAndView = new ModelAndView("update-package");
+		String message = "";
+		if(getPackage.getPid()!=0)
+		{
+			System.out.println("Inside update");
+			if(client.countPid(getPackage.getPid())) {
+				entity=client.updatePackage(requestToken, getPackage.getPid(), getPackage.getTreatmentPackageName());
+				message = "Updated package successfully!!";
+			}
+			else {
+				message = "Can't Update the Package! PID not available!";
+			}
+		}
+		modelAndView.addObject("message", message);
+		modelAndView.addObject("getPackage", getPackage);
+//		modelAndView.setStatus(entity.getStatusCode());
+		return modelAndView;
+	}
 	
 	
 	

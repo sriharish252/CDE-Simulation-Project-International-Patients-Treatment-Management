@@ -15,11 +15,12 @@ import io.swagger.annotations.ApiParam;
 
 @FeignClient(name = "IPTreatmentOffering-service", url = "${ipoffering.URL}")
 public interface IPTreatmentOfferingClient {
+	
 	@GetMapping("/ipTreatmentPackages")
 	public List<IPTreatmentPackage> getAllIPTreatmentPackage(@RequestHeader(value = "Authorization", required = true) String requestTokenHeader) throws Exception;
 	
-	@GetMapping("/ipTreatmentPackageByName/{ailment}/{packageName}")
-	public IPTreatmentPackage getIPTreatmentPackageByName(
+	@GetMapping("/ipTreatmentPackageByNameOnlyOne/{ailment}/{packageName}")
+	public IPTreatmentPackage getIPTreatmentPackageByNameOnlyOne(
 			@ApiParam(name = "ailment", value = "ailment of the package") @PathVariable AilmentCategory ailment,
 			@ApiParam(name = "packageName", value = "name of the package") @PathVariable String packageName,
 			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader)
@@ -27,6 +28,5 @@ public interface IPTreatmentOfferingClient {
 	
 	@GetMapping("/specialists")
 	public List<SpecialistDetail> getAllSpecialist(@RequestHeader(value = "Authorization", required = true) String requestTokenHeader) throws Exception;
-	
 	
 }

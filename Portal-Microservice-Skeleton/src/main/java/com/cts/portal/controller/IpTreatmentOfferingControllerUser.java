@@ -95,25 +95,20 @@ public class IpTreatmentOfferingControllerUser {	// this controller is only for 
 			ModelAndView login = new ModelAndView("error-page401");
 			return login;
 		}
-		/*
-		 * if token is set, 
-		 * then allow access to view
-		 */
+		//if token is set, then allow access to view
 		ModelAndView model = new ModelAndView("user-package-detail-by-name-page");
 		if (formInputsGetByPackageName != null && formInputsGetByPackageName.getAilment() != null
 				&& formInputsGetByPackageName.getPackageName() != null) {
 			try {
-				/*
-				 * get the package details by Name 
-				 * using feign client of IPOfferingMicroservice
-				 */
-				IPTreatmentPackage ipTreatmentPackagekageName = client.getIPTreatmentPackageByName(
+				//get the package details by Name, using feign client of IPOfferingMicroservice
+				List<IPTreatmentPackage> ipTreatmentPackageNames = client.getIPTreatmentPackageByName(
 						formInputsGetByPackageName.getAilment(),
 						formInputsGetByPackageName.getPackageName(),
 						(String) request.getSession().getAttribute("Authorization"));
-				model.addObject("ipTreatmentPackagekageName", ipTreatmentPackagekageName);
+				System.out.println(ipTreatmentPackageNames);
+				model.addObject("ipTreatmentPackageNames", ipTreatmentPackageNames);
 			} catch (IPTreatmentPackageNotFoundException e) {
-				model.addObject("error", e.getMessage());
+				model.addObject("error", "Not Found");
 			}
 		}
 		return model;

@@ -51,38 +51,35 @@
 				</div>
 				<div class="container result-container center border">
 					<h3>Search Result</h3>
-					<c:choose>
-						<c:when test="${not empty error}">
-							<div class="error">${error}</div>
-						</c:when>
-						<c:otherwise>
-							<c:choose>
-								<c:when test="${not empty ipTreatmentPackagekageName}">
-									<span><h5>Ailment</h5> </span>
-									<span> : </span>
-									<span>${ipTreatmentPackagekageName.getAilmentCategory()}
-									</span>
-									<br />
-									<span><h5>Package Name</h5></span>
-									<span> : </span>
-									<span>${ipTreatmentPackagekageName.getPackageDetail().getTreatmentPackageName()}</span>
-									<br />
-									<span><h5>Test Details</h5></span>
-									<span> : </span>
-									<span>${ipTreatmentPackagekageName.getPackageDetail().getTestDetails()}</span>
-									<br />
-									<span><h5>Cost</h5></span>
-									<span> : </span>
-									<span>${ipTreatmentPackagekageName.getPackageDetail().getCost()}</span>
-									<br />
-									<span><h5>Duration</h5></span>
-									<span> : </span>
-									<span>${ipTreatmentPackagekageName.getPackageDetail().getTreatmentDuration()}</span>
-									<br />
-								</c:when>
-							</c:choose>
-						</c:otherwise>
-					</c:choose>
+						<c:if test="${fn:length(ipTreatmentPackageNames) eq 0}">
+							<h4>No packages to show!</h4>
+							<br/>
+						</c:if>
+						<c:if test="${fn:length(ipTreatmentPackageNames) gt 0}">
+					 	<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Ailment</th>
+									<th>Package Name</th>
+									<th>Test Details</th>
+									<th>Cost</th>
+									<th>Duration</th>
+								</tr>
+							</thead>
+							<tbody>
+							 	<c:forEach items="${ipTreatmentPackageNames}" var="package"
+									varStatus="loop">
+									<tr>
+										<td>${package.getAilmentCategory()}</td>
+										<td>${package.getPackageDetail().getTreatmentPackageName()}</td>
+										<td>${package.getPackageDetail().getTestDetails()}</td>
+										<td>${package.getPackageDetail().getCost()}</td>
+										<td>${package.getPackageDetail().getTreatmentDuration()}</td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+						</c:if>
 				</div>
 			</div>
 		</div>

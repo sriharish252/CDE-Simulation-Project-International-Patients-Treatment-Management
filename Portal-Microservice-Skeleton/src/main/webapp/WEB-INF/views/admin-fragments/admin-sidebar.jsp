@@ -6,8 +6,8 @@
 		<li><a href="/portal/addSpecialist">Add / Update Specialist</a></li>
 		<li><a href="/portal/deleteSpecialistById">Delete Specialist</a></li>
 		<li><a href="/portal/viewSpecialistsByExpertise">View Specialists By Expertise</a></li>
-		<li><a href="/portal/updatePackage">Update Package</a></li>
 		<li><a href="/portal/ipTreatmentPackages">Our Service Packages</a></li>
+		<li><a href="/portal/updatePackage">Update Package</a></li>
 		<li><a href="/portal/ipTreatmentPackageByName">Search All Packages</a></li>
 		<li><a href="/portal/treatmentRegister">Register Patient</a></li>
 		<li><a href="/portal/trackTreatment">View Treatment Plan</a></li>

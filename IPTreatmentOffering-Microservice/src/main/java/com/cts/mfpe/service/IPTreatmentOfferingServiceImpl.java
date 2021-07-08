@@ -40,10 +40,20 @@ public class IPTreatmentOfferingServiceImpl implements IPTreatmentOfferingServic
 	}
 
 	@Override
-	public IPTreatmentPackage findIPTreatmentPackageByName(AilmentCategory ailment, String packageName) throws IPTreatmentPackageNotFoundException {
+	public IPTreatmentPackage findIPTreatmentPackageByNameOnlyOne(AilmentCategory ailment, String packageName) throws IPTreatmentPackageNotFoundException {
 
-		IPTreatmentPackage treatmentPackage = treatmentPackRepository.findByName(ailment, packageName)
-					.orElseThrow(() -> new IPTreatmentPackageNotFoundException("IP Treatment Package not found"));
+		IPTreatmentPackage treatmentPackage = treatmentPackRepository.findByName(ailment, packageName).get(0);
+		System.out.println(treatmentPackage);
+		
+		log.info("[IPTreatmentPackage ("+packageName+") detail:] "+ treatmentPackage);
+		return treatmentPackage;
+	}
+	
+	@Override
+	public List<IPTreatmentPackage> findIPTreatmentPackageByName(AilmentCategory ailment, String packageName) throws IPTreatmentPackageNotFoundException {
+
+		List<IPTreatmentPackage> treatmentPackage = treatmentPackRepository.findByName(ailment, packageName);
+		System.out.println(treatmentPackage);
 		
 		log.info("[IPTreatmentPackage ("+packageName+") detail:] "+ treatmentPackage);
 		return treatmentPackage;
@@ -103,4 +113,13 @@ public class IPTreatmentOfferingServiceImpl implements IPTreatmentOfferingServic
 		log.info("[Package updated successfully] ");
 	}
 
+	
+	@Override
+	@Transactional
+	public boolean countById(int pid) {
+		System.out.println("Check the Pid in Db, pid: " + pid);
+		return (!packageDetailRepository.findById(pid).isEmpty());
+	}
+	
+	
 }

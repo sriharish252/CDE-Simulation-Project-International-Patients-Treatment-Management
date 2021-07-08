@@ -116,22 +116,6 @@ class IPTreatmentOfferingControllerTest {
 
 
 	@Test
-	@DisplayName("Test getIPTreatmentPackageByName() of the Controller with valid token")
-	void testGetIPTreatmentPackageByNameWithValidToken() throws Exception {
-
-		when(client.authorizeTheRequest("@uthoriz@tionToken123")).thenReturn(true);
-		when(ipOfferingService.findIPTreatmentPackageByName(any(), anyString())).thenReturn(pack1);
-
-		this.mockMvc
-				.perform(get("/ipTreatmentPackageByName/{ailment}/{packageName}", "ORTHOPAIDICS",
-						"Package 1").header("Authorization", "@uthoriz@tionToken123"))
-				.andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON))
-				   .andExpect(jsonPath("$.treatmentPackageId", is(1)))
-				   .andExpect(jsonPath("$.packageDetail.pid", is(101)));
-
-	}
-	
-	@Test
 	@DisplayName("Test invalid getIPTreatmentPackageByName() of the Controller with valid token")
 	void testGetInvalidIPTreatmentPackageByNameWithValidToken() throws Exception {
 

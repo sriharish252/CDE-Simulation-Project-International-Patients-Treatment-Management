@@ -56,7 +56,9 @@ public class AuditSeverityController {
 	@PostMapping("/initiateClaim")
 	public double initiateClaim(@RequestBody InitiateClaim claim,
 			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader) throws Exception {
+		System.out.println("Inside InitiateClaim*************");
 		if (authorizingClient.authorizeTheRequest(requestTokenHeader)) {
+			System.out.println("Inside IF of InitiateClaim*************");
 			return initiateClaimService.initiateClaim(claim, requestTokenHeader);
 		} else {
 			throw new AuthorizationException("Not allowed");

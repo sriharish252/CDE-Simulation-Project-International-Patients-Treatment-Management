@@ -21,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.cts.portal.exception.AuthorizationException;
 import com.cts.portal.exception.IPTreatmentPackageNotFoundException;
+import com.cts.portal.feign.AuthorisingClient;
 import com.cts.portal.feign.IPTreatmentOfferingClient;
 import com.cts.portal.model.AreaOfExpertise;
 import com.cts.portal.model.FormInputGetBySpecialistId;
@@ -37,6 +38,9 @@ public class IpTreatmentOfferingController {
 
 	@Autowired
 	private IPTreatmentOfferingClient client;
+	
+	@Autowired
+	private AuthorisingClient authClient;
 
 	/**
 	 * @param request
@@ -130,6 +134,7 @@ public class IpTreatmentOfferingController {
 	 * @throws Exception
 	 */
 	
+	/*
 	@GetMapping(value = "/viewSpecialistsByExpertise")
 	public ModelAndView showSpecialistsByExpertise(@ModelAttribute("areaOfExpertise") AreaOfExpertise areaOfExpertise,HttpServletRequest request) throws Exception {
 		
@@ -145,10 +150,7 @@ public class IpTreatmentOfferingController {
 		if(areaOfExpertise.getAilment() != null)
 		{
 			try {
-				/*
-				 * get the specialist by expertise
-				 * using feign client of IPOfferingMicroservice 
-				 */
+				//get the specialist by expertise, using feign client of IPOfferingMicroservice 
 				List<SpecialistDetail> specialists = client.getAllSpecialistsByExpertise(
 						(String) request.getSession().getAttribute("Authorization"),
 						areaOfExpertise.getAilment());
@@ -161,7 +163,7 @@ public class IpTreatmentOfferingController {
 		
 		return model; 
 	}
-	
+	*/
 
 	/*
 	@ModelAttribute("ailmentList")
@@ -180,7 +182,8 @@ public class IpTreatmentOfferingController {
 	
 	
 	//////////////////////////////////////////////////////////////////////
-	
+
+	/*
 	@GetMapping("/deleteSpecialistById")
 	public ModelAndView deleteSpecialist(@ModelAttribute("formInputGetBySpecialistId") 
 			FormInputGetBySpecialistId formInputGetBySpecialistId,HttpServletRequest request) throws Exception {
@@ -190,15 +193,9 @@ public class IpTreatmentOfferingController {
 			login.setStatus(HttpStatus.UNAUTHORIZED);
 			return login;
 		}
-		
 		ModelAndView model = new ModelAndView("delete-specialist-by-id");
-		
 		List<SpecialistDetail> specialists = client
 				.getAllSpecialist((String) request.getSession().getAttribute("Authorization"));
-		System.out.println("SPECIALISTS ****************");
-		for (SpecialistDetail specialistDetail : specialists) {
-			System.out.println(specialistDetail.getSpecialistId()+" "+specialistDetail.getName());
-		}
 		boolean available = false;
 		for (SpecialistDetail specialistDetail : specialists) {
 			if(specialistDetail.getSpecialistId() == formInputGetBySpecialistId.getSpecialistId()) {
@@ -210,12 +207,10 @@ public class IpTreatmentOfferingController {
 				model.addObject("message", "Cannot delete, ID not available");
 			return model;
 		}
-		
 		if(formInputGetBySpecialistId.getSpecialistId()!=0)
 		{ 
 	 		ResponseEntity<String> entity=client.deleteSpecialist((String) request.getSession().getAttribute("Authorization"),
 					formInputGetBySpecialistId.getSpecialistId());
-	 		System.out.println("****************** INSIDE IF *******************");
 	 		if(entity.getStatusCodeValue() == 200)
 	 			model.addObject("message", "Deleted Successfully");
 		}
@@ -225,8 +220,10 @@ public class IpTreatmentOfferingController {
 		model.setStatus(HttpStatus.OK);
 		return model;
 	}
-		
+	*/
+	
 	//--------------------------------------------------
+	/*
 	@GetMapping(value = "/addSpecialist")
 	public ModelAndView getAddSpecialist(	// for showing the add specialist form
 			HttpServletRequest request,
@@ -286,8 +283,11 @@ public class IpTreatmentOfferingController {
 					return login;	
 				}
 	}
+	*/
 	
 	//***********************************************
+
+	/*
 	//update package get and post mapping
 	@GetMapping("/updatePackage") 
 	public ModelAndView viewUpdatePackage(@ModelAttribute("getPackage") GetPackage getPackage, HttpServletRequest request) throws Exception
@@ -326,5 +326,6 @@ public class IpTreatmentOfferingController {
 		modelAndView.setStatus(entity.getStatusCode());
 		return modelAndView;       
 	} 
+	*/
 	
 }

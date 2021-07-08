@@ -35,7 +35,7 @@
 
 		<div class="section grid">
 		
-			<%@ include file="admin-fragments/admin-sidebar.jsp"%>
+			<%@ include file="user-fragments/side-navbar.jsp"%>
 			<div class="content list-container">
 				<h1>Our In-patient Services</h1>
 				<div class="container">
