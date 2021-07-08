@@ -47,7 +47,9 @@
 			<div class="content list-container">
 				<div class="container">
 					<h1>Update Package</h1>
-					
+					<div class="alert alert-light">
+            					${message}
+        				</div>
 					<form:form action="/portal/updatePackage" method="POST"
 						modelAttribute="getPackage" id="formName">
 						<div class="form-group">
