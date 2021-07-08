@@ -54,7 +54,7 @@ This microsevice provides the endpoints for authentication and authorization
     </tbody>
 </table>
 #### --Application Properties Toggle :
-spring.application.name=Authorizatiion-Microservice
-server.port=8400
-server.servlet.context-path=/auth
-User Database : H2(In-Memory)
+spring.application.name=Authorizatiion-Microservice<br/>
+server.port=8400<br/>
+server.servlet.context-path=/auth<br/>
+User Database : H2(In-Memory)<br/>
