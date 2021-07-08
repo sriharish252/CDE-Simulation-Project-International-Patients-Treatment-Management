@@ -120,21 +120,31 @@ public class IPTreatmentOfferingController {
 	}
 	
 	/////////////////////////////////////////////////////////
-	
+	// Admin Only
+	@SuppressWarnings("finally")
 	@DeleteMapping("/deleteSpecialist/{specialistId}")
 	public ResponseEntity<String> deleteSpecialist(
 			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader,
 			@ApiParam(name = "specialistId", value = "id of the specialist") @PathVariable int specialistId) throws AuthorizationException{
-		if (authorisingClient.authorizeTheRequest(requestTokenHeader)) {
-			ipOfferingService.deleteSpecialist(specialistId);
-			return new ResponseEntity<>("Deleted Succesfully", HttpStatus.OK);
-		} else {
-			throw new AuthorizationException("Not allowed");
+		ResponseEntity<String> response = null;
+		try {
+			if (authorisingClient.authorizeTheRequestIfAdmin(requestTokenHeader)) {
+				ipOfferingService.deleteSpecialist(specialistId);
+				response = new ResponseEntity<>("Deleted Succesfully", HttpStatus.OK);
+			} else {
+				throw new AuthorizationException("Not allowed");
+			}
+		}catch(AuthorizationException ae) {
+			System.out.println(ae.getMessage());
+			response = new ResponseEntity<String>("Not Authorized Access", HttpStatus.UNAUTHORIZED);
+		}finally {
+			return response;
 		}
 	}
 	
 	//--------------------------------------------------------
 	@SuppressWarnings("finally")
+	// Admin Only
 	// addSpecialist endpoint : it will add the specialist details in the database and return the status of the action as ResponseEntity
 	@PostMapping(path = "/addSpecialist")
 	public ResponseEntity<String> addSpecialist(
@@ -164,22 +174,32 @@ public class IPTreatmentOfferingController {
 	//*********
 	/*
 	 * Put Mapping 
+	 * Admin Only
 	 * Updating the packages if id is provided to update treatment package name
 	 */	
+	@SuppressWarnings("finally")
 	@PutMapping("/updatePackage/{pid}/{treatmentPackageName}")
 	public ResponseEntity<String> updatePackage(
 			@RequestHeader(value = "Authorization", required = true) String requestTokenHeader,
 			@ApiParam(name = "pid", value = "id of the package") @PathVariable int pid,
 			@ApiParam(name = "treatmentPackageName", value = "name of the package") @PathVariable String treatmentPackageName) throws AuthorizationException{
-		if (authorisingClient.authorizeTheRequest(requestTokenHeader)) {
-			//System.out.println("BeforeUPdate");
-			System.out.println(pid +" " +treatmentPackageName);
-			ipOfferingService.updateTreatmentPackage(pid, treatmentPackageName);
-			//System.out.println("Updated !!!----");
-			return new ResponseEntity<>("Updated Succesfully", HttpStatus.OK);
-		} else {
-			System.out.println("Error in Updating---!!!!");
-			throw new AuthorizationException("Not allowed");
+		ResponseEntity<String> response = null;
+		try {
+			if (authorisingClient.authorizeTheRequestIfAdmin(requestTokenHeader)) {
+				//System.out.println("BeforeUPdate");
+				System.out.println(pid +" " +treatmentPackageName);
+				ipOfferingService.updateTreatmentPackage(pid, treatmentPackageName);
+				//System.out.println("Updated !!!----");
+				return new ResponseEntity<>("Updated Succesfully", HttpStatus.OK);
+			} else {
+				System.out.println("Error in Updating---!!!!");
+				throw new AuthorizationException("Not allowed");
+			}
+		}catch(AuthorizationException ae) {
+			System.out.println(ae.getMessage());
+			response = new ResponseEntity<String>("Not Authorized Access", HttpStatus.UNAUTHORIZED);
+		}finally {
+			return response;
 		}
 	}
 	
