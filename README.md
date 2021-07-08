@@ -25,8 +25,8 @@
 ## Modules::
 
 * ### Authorizatiion-Microservice :
-This module is used for doing the **Authentication** and **Authorization** part of our project. 
-This microsevice provides the endpoints for authentication and authorization
+  This module is used for doing the **Authentication** and **Authorization** part of our project. 
+  This microsevice provides the endpoints for authentication and authorization
 
   * #### --Endpoints : 
     <table>
@@ -123,12 +123,12 @@ This microsevice provides the endpoints for viewing and modifying the treatment 
         <tr>
             <td>GET</td>
             <td>/ipTreatmentPackageByName/{ailment}/{packageName}</td>
-            <td>List of "IPTreatmentPackage"></td>
+            <td>List of "IPTreatmentPackage"</td>
         </tr>
         <tr>
             <td>GET</td>
             <td>/specialists</td>
-            <td>List of "SpecialistDetail"></td>
+            <td>List of "SpecialistDetail"</td>
         </tr>
         <tr>
             <td>POST</td>
@@ -138,12 +138,12 @@ This microsevice provides the endpoints for viewing and modifying the treatment 
         <tr>
             <td>DELETE</td>
             <td>/deleteSpecialist/{specialistId}</td>
-            <td>ResponseEntity of String type></td>
+            <td>ResponseEntity of String</td>
         </tr>
         <tr>
             <td>PUT</td>
             <td>/updatePackage/{pid}/{treatmentPackageName}</td>
-            <td>ResponseEntity of String type</td>
+            <td>ResponseEntity of String</td>
         </tr>
         <tr>
             <td>GET</td>
